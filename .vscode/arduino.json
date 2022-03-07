@@ -1,0 +1,6 @@
+{
+    "sketch": "Arduino/motor_completo_v3_/motor_completo_v3_.ino",
+    "board": "arduino:avr:uno",
+    "port": "/dev/ttyUSB0",
+    "output": "Arduino/ArduinoOutput"
+}

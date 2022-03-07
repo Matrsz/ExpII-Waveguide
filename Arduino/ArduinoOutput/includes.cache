@@ -1,0 +1,17 @@
+[
+  {
+    "Sourcefile": null,
+    "Include": "",
+    "Includepath": "/home/inox/Downloads/arduino-1.8.16/hardware/arduino/avr/cores/arduino"
+  },
+  {
+    "Sourcefile": null,
+    "Include": "",
+    "Includepath": "/home/inox/Downloads/arduino-1.8.16/hardware/arduino/avr/variants/standard"
+  },
+  {
+    "Sourcefile": "/home/inox/Documents/IB/4to Nivel/Experimental II/Guia de Ondas/Arduino/ArduinoOutput/sketch/motor_completo_v3_.ino.cpp",
+    "Include": "",
+    "Includepath": null
+  }
+]
