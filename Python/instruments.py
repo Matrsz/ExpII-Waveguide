@@ -19,7 +19,7 @@ class Multi():
     """
 
     id_vendor = 0x1ab1
-    id_product = None
+    id_product = None 
 
     def __init__(self, port):
 #        if self.id_product is None:
