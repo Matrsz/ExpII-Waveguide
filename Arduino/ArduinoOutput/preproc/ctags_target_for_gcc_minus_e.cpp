@@ -20,11 +20,11 @@ void setup() {
   pinMode(buttonPin3, 0x2);
   pinMode(buttonPin, 0x2);
   pinMode(ledPin, 0x1);
-  pinMode(6,0x1); // Enable
-  pinMode(5,0x1); // Step
-  pinMode(4,0x1); // Dir
-  digitalWrite(6,0x0); // Set Enable low
-  J=2000;
+  pinMode(6, 0x1); // Enable
+  pinMode(5, 0x1); // Step
+  pinMode(4, 0x1); // Dir
+  digitalWrite(6, 0x0); // Set Enable low
+  J = 2000;
   Serial.begin(9600);
   Serial.println("<Arduino is ready>");
   digitalWrite(ledPin, ledState);
@@ -34,95 +34,105 @@ void loop() {
   int reading = digitalRead(buttonPin);
   int reading3 = digitalRead(buttonPin3);
   if (reading != lastButtonState) {
-     lastDebounceTime = millis();
+    lastDebounceTime = millis();
   }
 
-      if ((millis() - lastDebounceTime) > debounceDelay) {
-          if (reading != buttonState) {
-          buttonState = reading;
-            while (buttonState == 0x0) {
-              recvOneChar();
-                  if(newData==true && receivedChar == 's'){
-                    showNewData();
-                    //espera hasta que recive una a
-                    arrch:
-                    recvOneChar();
-                    while(newData!=true)recvOneChar();
-                    if(receivedChar == 'a'){//continua
-                    }
-                    else{goto arrch;}
-//                    delay(J);
-                  }
-            ledState = 0x1;
-            digitalWrite(4,0x1);
-            int reading3 = digitalRead(buttonPin3);
-            digitalWrite(5,0x1); // Output high
-            delayMicroseconds(1000); // Wait 1/2 a ms
-            digitalWrite(5,0x0); // Output low
-            delayMicroseconds(1000); // Wait 1/2 a ms
-            if (reading3 == 0x0) break;
-            }
-          digitalWrite(4,0x0);
+  if ((millis() - lastDebounceTime) > debounceDelay) {
+    if (reading != buttonState) {
+      buttonState = reading;
+      while (buttonState == 0x0) {
+        recvOneChar();
+        if (newData == true && receivedChar == 's') {
+          showNewData();
+        // espera hasta que recive una a
+        arrch:
+          recvOneChar();
+          while (newData != true)
+            recvOneChar();
+          if (receivedChar == 'a') { } // continua 
+          else {
+            goto arrch;
           }
+          //                    delay(J);
+        }
+        ledState = 0x1;
+        digitalWrite(4, 0x1);
+        int reading3 = digitalRead(buttonPin3);
+        digitalWrite(5, 0x1); // Output high
+        delayMicroseconds(1000); // Wait 1/2 a ms
+        digitalWrite(5, 0x0); // Output low
+        delayMicroseconds(1000); // Wait 1/2 a ms
+        if (reading3 == 0x0) {
+          Serial.println("R");
+          break;
+        }
       }
-   if (reading3 != lastButtonState3) {
-      lastDebounceTime = millis();
+      digitalWrite(4, 0x0);
+    }
+  }
+  if (reading3 != lastButtonState3) {
+    lastDebounceTime = millis();
   }
 
-    if ((millis() - lastDebounceTime) > debounceDelay) {
-            if (reading3 != buttonState3) {
-            buttonState3 = reading3;
+  if ((millis() - lastDebounceTime) > debounceDelay) {
+    if (reading3 != buttonState3) {
+      buttonState3 = reading3;
 
-                while (buttonState3 == 0x0) {
-                  recvOneChar();
-                  if(newData==true && receivedChar == 's'){
-                    showNewData();
-                    //espera hasta que recive una a
-                    //espera hasta que recive una a
-                    arrci:
-                    recvOneChar();
-                    while(newData!=true)recvOneChar();
-                    if(receivedChar == 'a'){//continua
-                    }
-                    else{goto arrch;}
-                    recvOneChar();
-                    while(newData!=true)recvOneChar();
-                    if(receivedChar == 'a'){//continua
-                    }
-                    else{goto arrci;}
-                    //delay(J);
-                  }
-                ledState = 0x0;
-                int reading = digitalRead(buttonPin);
-                digitalWrite(4,0x0);
-                int reading3 = digitalRead(buttonPin3);
-                digitalWrite(5,0x1); // Output high
-                delayMicroseconds(1000); // Wait 1/2 a ms
-                digitalWrite(5,0x0); // Output low
-                delayMicroseconds(1000); // Wait 1/2 a ms
-                if (reading == 0x0) break;
-                }
-            digitalWrite(4,0x1);
-            }
+      while (buttonState3 == 0x0) {
+        recvOneChar();
+        if (newData == true && receivedChar == 's') {
+          showNewData();
+        // espera hasta que recive una a
+        // espera hasta que recive una a
+        arrci:
+          recvOneChar();
+          while (newData != true)
+            recvOneChar();
+          if (receivedChar == 'a') {} // continua
+          else {
+            goto arrch;
+          }
+          recvOneChar();
+          while (newData != true)
+            recvOneChar();
+          if (receivedChar == 'a') {} // continua
+          else {
+            goto arrci;
+          }
+          // delay(J);
+        }
+        ledState = 0x0;
+        int reading = digitalRead(buttonPin);
+        digitalWrite(4, 0x0);
+        int reading3 = digitalRead(buttonPin3);
+        digitalWrite(5, 0x1); // Output high
+        delayMicroseconds(1000); // Wait 1/2 a ms
+        digitalWrite(5, 0x0); // Output low
+        delayMicroseconds(1000); // Wait 1/2 a ms
+        if (reading == 0x0) {
+          Serial.println("L");
+          break;
+        }
+      }
+      digitalWrite(4, 0x1);
     }
+  }
   digitalWrite(ledPin, ledState);
   lastButtonState = reading;
   lastButtonState3 = reading3;
-
 }
 
-
 void recvOneChar() {
- if (Serial.available() > 0) {
- receivedChar = Serial.read();
- newData = true;
- }
+  if (Serial.available() > 0) {
+    receivedChar = Serial.read();
+    newData = true;
+  }
 }
 
 void showNewData() {
- if (newData == true) {
- Serial.print("This just in ... ");
- Serial.println(receivedChar);
- newData = false;
- }
+  if (newData == true) {
+    Serial.print("This just in ... ");
+    Serial.println(receivedChar);
+    newData = false;
+  }
 }
