@@ -17,8 +17,8 @@ int lastRightState = HIGH;  // the previous rightRead from the input pin
 long lastDebounceTime = 0; // the last time the output pin was toggled
 long debounceDelay = 50;   // the debounce time; increase if the output flickers
 
-int hightime = 1000;
-int lowtime = 2000;
+int hightime = 4000;
+int lowtime = 4000;
 
 char receivedChar;
 boolean newData = false;
