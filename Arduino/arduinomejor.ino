@@ -16,10 +16,6 @@ int lastRightState = HIGH;  // the previous rightRead from the input pin
 // will quickly become a bigger number than can be stored in an int.
 long lastDebounceTime = 0; // the last time the output pin was toggled
 long debounceDelay = 50;   // the debounce time; increase if the output flickers
-
-int hightime = 4000;
-int lowtime = 4000;
-
 char receivedChar;
 boolean newData = false;
 
@@ -67,9 +63,9 @@ void loop() {
         digitalWrite(4, HIGH);
         int leftRead = digitalRead(leftEnd);
         digitalWrite(5, HIGH);   // Output high
-        delayMicroseconds(hightime); // Wait 1/2 a ms
+        delayMicroseconds(1000); // Wait 1/2 a ms
         digitalWrite(5, LOW);    // Output low
-        delayMicroseconds(lowtime); // Wait 1/2 a ms
+        delayMicroseconds(1000); // Wait 1/2 a ms
         if (leftRead == LOW) {
           Serial.println("R");
           break;
@@ -115,9 +111,9 @@ void loop() {
         digitalWrite(4, LOW);
         int leftRead = digitalRead(leftEnd);
         digitalWrite(5, HIGH);   // Output high
-        delayMicroseconds(hightime); // Wait 1/2 a ms
+        delayMicroseconds(1000); // Wait 1/2 a ms
         digitalWrite(5, LOW);    // Output low
-        delayMicroseconds(lowtime); // Wait 1/2 a ms
+        delayMicroseconds(1000); // Wait 1/2 a ms
         if (rightRead == LOW) {
           Serial.println("L");
           break;

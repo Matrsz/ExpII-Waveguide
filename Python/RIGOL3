@@ -1,0 +1,32 @@
+import os 
+
+class Multi():
+    id_vendor = 0x1ab1
+    id_product = None 
+
+    def __init__(self, port):
+        self.dev = os.open(port,os.O_RDWR)
+        if self.dev is None:
+           raise ValueError('Device not found')
+    
+    def setResistance(self):
+        cmd = "FUNC:RES".encode()
+        os.write(self.dev, cmd)
+        return
+    
+    def setVoltDC(self):
+        cmd = "FUNC:VOLT:DC".encode()
+        os.write(self.dev, cmd)
+        return
+    
+    def getVoltDC(self):
+        cmd = "MEAS:VOLT:DC?".encode()
+        os.write(self.dev, cmd)
+        return os.read(self.dev, 20)
+    
+    def getResistance(self):
+        cmd = "MEAS:RES?".encode()
+        os.write(self.dev, cmd)
+        return os.read(self.dev, 20)
+
+multi1 = Multi("/dev/usbtmc0")

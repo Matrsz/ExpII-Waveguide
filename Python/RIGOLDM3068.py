@@ -1,37 +1,40 @@
 import pyvisa
+import serial
 import numpy as np
 import matplotlib.pyplot as plt
 from time import sleep
-rm = pyvisa.ResourceManager()
+rm = pyvisa.highlevel.ResourceManager()
 
 
-MULT1 = rm.open_resource('USB0::0x1AB1::0x0C94::DM3O163050394::INSTR')
-MULT2 = rm.open_resource('USB0::0x1AB1::0x0C94::DM3O163250415::INSTR')
+resources = rm.list_resources()
+print(resources)
 
-MULT1.write(':FUNC:VOLT:DC')
+MULT1 = rm.open_resource("USB0::6833::3220::DM3O163250415::0::INSTR")
+MULT2 = rm.open_resource("USB0::6833::3220::DM3O163050394::0::INSTR")
+
+MULT1.write(':FUNC:RES')
 MULT2.write(':FUNC:VOLT:DC')
 
-Volts = []
-Resist = []
-Seconds = []
-for i in range(1, 10, 1):
-    v = MULT1.query(':MEASure:VOLT:DC?')
-    Volts.append(float(v))
-    Seconds.append(i)
-    sleep(0.5)
+ino = serial.Serial('/dev/ttyUSB0', 9600)
+ino.reset_input_buffer()
+ino.reset_output_buffer()
+
+ino.write('a'.encode())
+
+v = []
+z = []
+
+def z(r):
+    0.1291*r-3.272
+
+while ino.read() != 'L':
+    r_in = MULT1.query(':MEAS:RES?')
+    v_in = MULT2.query(':MEAS:VOLT:DC?')
+    v.append(float(v_in))
+    z.append(z(float(r_in)))
     print(v)
 
-for i in range(1, 10, 1):
-    r = MULT2.query(':MEASure:VOLT:DC?') 
-    Resist.append(r)
-    sleep(0.5)
-    print(r)
+ino.write('s'.encode)
 
-fig = plt.figure()
-ax = fig.add_subplot(1, 1, 1)
-ax.plot(Volts, Seconds, "bo")
+plt.plot()
 plt.show()
-
-
-#USB0::0x1AB1::0x0C94::DM3O163250415::INSTR 
-#USB0::0x1AB1::0x0C94::DM3O163050394::INSTR
