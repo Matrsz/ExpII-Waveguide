@@ -35,11 +35,11 @@ def fit_sin(tt, yy):
     c = (max(yy)+min(yy))/2
     guess = np.array([2.*np.pi*guess_freq, 0.1])
 
-    def sinfunc(t, w, p):  return A * np.sin(w*t + p) + c
+    def sinfunc(t, w, p):  return -A * np.cos(w*t - p) + c
     popt, pcov = scipy.optimize.curve_fit(sinfunc, tt, yy, p0=guess)
     w, p= popt
     f = w/(2.*np.pi)
-    fitfunc = lambda t: A * np.sin(w*t + p) + c
+    fitfunc = lambda t: A * np.sin(w*t - p) + c
     return {"amp": A, "omega": w, "phase": p, "offset": c, "freq": f, "period": 1./f, "fitfunc": fitfunc, "maxcov": np.max(pcov), "rawres": (guess,popt,pcov)}
 
 def sort_arrays(z, v):
@@ -47,21 +47,38 @@ def sort_arrays(z, v):
     return [z[args], v[args]]
 
 
-data2 = np.genfromtxt('cortocircuito_relento2.csv', delimiter=' ')
+data2 = np.genfromtxt('corneta_relento.csv', delimiter=' ')
 z2, v2 = sort_arrays(data2[:,0], data2[:, 1])
+
+z2 = z2 + 0.5958336695473103
 
 params = fit_sin(z2, v2)
 print(params)
-#z0 = np.linspace(0, 19, 10000)
-z0 = z2
-
-x = params["amp"]*np.sin(params["omega"]*z0+params["phase"])+params["offset"]
-plt.plot(z2, v2, z0, x, 'b:')
-#plt.plot(z3, v3, 'r', z3, np.sin(k3*z3-fase3), 'r:')
-#plt.plot(z4, v4, 'g')
+z0 = np.linspace(-1, 19, 10000)
+#z0 = z2
 
 
+vmax = (params["offset"]+params["amp"])
+vmin = (params["offset"]-params["amp"])
+lg = 2/params["freq"]
 
-#, z2, v2, z3, v3, z4, v4)
-#plt.legend(["aire", "cortocircuito", "acrilico", "corneta"])
+delta = (params["phase"]/params["omega"])
+
+print(f"vmax: {vmax*1e3}\n vmin: {vmin*1e3}\n lambda: {lg}\n delta: {delta}\n delta/lg = {delta/lg}")
+
+roe = vmax/vmin
+gamma_abs = (roe-1)/(roe+1)
+
+Zv = 376.73
+co = 299792458*100
+f = 10.53e9
+Zo = Zv/co*f*lg
+
+print(f"roe: {roe}\n Zo = {Zo}")
+
+x = -params["amp"]*np.cos(params["omega"]*z0-params["phase"])+params["offset"]
+plt.plot(z2, v2, z0, x, 'b:', z0, x*0+params["offset"], '--k')
+plt.plot([0, 0], [0, vmax], 'k', [delta, delta], [0, vmax], '--k')
+plt.gca().invert_xaxis()
 plt.show()
+

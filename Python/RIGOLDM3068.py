@@ -27,7 +27,7 @@ file = open(filename, 'w', newline='')
 writer = csv.writer(file, delimiter=' ', quotechar='|', quoting=csv.QUOTE_MINIMAL)
 
 def rtoz(x):
-    return 0.01273637345*x+5.230928738
+    return 0.01187*x+5.356
 
 start = False
 finish = False
@@ -51,7 +51,7 @@ while not(finish):
         v_in = float(inst2.ask(':MEAS:VOLT:DC?'))
         z_in = rtoz(r_in)
         print(z_in, v_in, start, finish)
-        writer.writerow([z_in, v_in])
+        writer.writerow([z_in, v_in, r_in])
         v.append(v_in)
         z.append(z_in)
 
@@ -60,3 +60,4 @@ ino.write('s'.encode())
 
 plt.plot(z, v)
 plt.show()
+
