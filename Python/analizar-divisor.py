@@ -48,16 +48,14 @@ def fit_sin(tt, yy):
 #    return [z[args], v[args]]
 
 
-data2 = np.genfromtxt('sistema_sin_terminal.csv', delimiter=' ')
-data3 = np.genfromtxt('sistema_adaptado2.csv', delimiter=' ')
-z2, v2, s2 = data2[:,0], data2[:, 1], data2[:, 3]
-z3, v3, s3 = data3[:,0], data3[:, 1], data3[:, 3]
+data2 = np.genfromtxt('divisor2.csv', delimiter=' ')
+#data3 = np.genfromtxt('sistema_adaptado2.csv', delimiter=' ')
+z2, v2, vx, vy = data2[:,0], data2[:, 1], data2[:, 3], data2[:, 4]
 #z3, v3 = sort_arrays(data3[:,0], data3[:, 1])
 
 z2 = z2 + 0.5958336695473103-0.055836036880428416-0.5706994355396638
 
-plt.plot(z2, s2)
-plt.plot(z3, s3)
+plt.plot(z2, vx, z2, vy, z2, v2)
 plt.show()
 
 params = fit_sin(z2, v2)
@@ -97,10 +95,10 @@ print(f"coef reflexion: {gamma} = {mod_gamma}*exp({fase_gamma}j) \nzL = {zl} = {
 
 x = -params["amp"]*np.cos(params["omega"]*z0-params["phase"])+params["offset"]
 plt.plot(z2, v2, z0, x, 'b:', z0, x*0+params["offset"], '--k')
-plt.plot(z3, v3)
 plt.plot([0, 0], [0, vmax], 'k', [delta, delta], [0, vmax], '--k')
 plt.gca().invert_xaxis()
 plt.show()
+
 
 zg = (Zl+1j*Zo*np.tan(2*np.pi*z0/lg))/(Zo+1j*Zl*np.tan(2*np.pi*z0/lg))
 zg = np.divide(1+gamma*np.exp(-1j*params["omega"]*z0), 1-gamma*np.exp(-1j*params["omega"]*z0))
