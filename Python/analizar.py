@@ -43,15 +43,21 @@ def fit_sin(tt, yy):
     fitfunc = lambda t: A * np.sin(w*t - p) + c
     return {"amp": A, "omega": w, "phase": p, "offset": c, "freq": f, "period": 1./f, "fitfunc": fitfunc, "maxcov": np.max(pcov), "rawres": (guess,popt,pcov)}
 
-def sort_arrays(z, v):
-    args = z.argsort()
-    return [z[args], v[args]]
+#def sort_arrays(z, v):
+#    args = z.argsort()
+#    return [z[args], v[args]]
 
 
-data2 = np.genfromtxt('aislante_relento.csv', delimiter=' ')
-z2, v2 = sort_arrays(data2[:,0], data2[:, 1])
+data2 = np.genfromtxt('sistema_desadaptado.csv', delimiter=' ')
+#data3 = np.genfromtxt('sistema_adaptado1.csv', delimiter=' ')
+z2, v2, s2 = data2[:,0], data2[:, 1], data2[:, 3]
+#z3, v3 = sort_arrays(data3[:,0], data3[:, 1])
 
-z2 = z2 + 0.5958336695473103
+z2 = z2 + 0.5958336695473103-0.055836036880428416-0.5706994355396638
+
+plt.plot(z2, s2)
+plt.ylim([0, max(s2)])
+plt.show()
 
 params = fit_sin(z2, v2)
 print(params)
@@ -78,22 +84,25 @@ Zo = Zv/co*f*lg
 print(f"roe: {roe} \nZo = {Zo}")
 
 mod_gamma = (roe - 1)/(roe + 1)
-fase_gamma = params["phase"]-np.pi
+fase_gamma = -params["phase"]+np.pi
 gamma = mod_gamma * np.exp(1j*fase_gamma)
 
 zl = (1+gamma)/(1-gamma)
 Zl = zl*Zo
 
-print(f"coef reflexion: {gamma} \nZL = {Zl} = {np.abs(Zl)}*exp({np.angle(Zl)}j)")
+print(f"coef reflexion: {gamma} = {mod_gamma}*exp({fase_gamma}j) \nzL = {zl} = {np.abs(zl)}*exp({np.angle(zl)}j)")
+
 
 
 x = -params["amp"]*np.cos(params["omega"]*z0-params["phase"])+params["offset"]
 plt.plot(z2, v2, z0, x, 'b:', z0, x*0+params["offset"], '--k')
+#plt.plot(z3, v3)
 plt.plot([0, 0], [0, vmax], 'k', [delta, delta], [0, vmax], '--k')
 plt.gca().invert_xaxis()
-#plt.show()
+plt.show()
 
-zg = (Zl+1j*Zo*np.tan(z0))/(Zo+1j*Zl*np.tan(z0))
+zg = (Zl+1j*Zo*np.tan(2*np.pi*z0/lg))/(Zo+1j*Zl*np.tan(2*np.pi*z0/lg))
+zg = np.divide(1+gamma*np.exp(-1j*params["omega"]*z0), 1-gamma*np.exp(-1j*params["omega"]*z0))
 yg = 1./zg
 
 
@@ -102,17 +111,30 @@ fig, axs = plt.subplots(2,1)
 rg, xg = np.real(zg), np.imag(zg)
 gg, bg = np.real(yg), np.imag(yg)
 
-index = np.nonzero([z if 0.99 < g < 1.01 else 0 for z, g in zip(z0, gg)])[0][0]
-z_1 = z0[index]
-
-print(f"Pos. adaptador: {z_1} \nAdmitancia adaptador: {np.conj(yg[index])}")
+indexC = np.nonzero([z if 0.99 < np.real(y) < 1.01 and np.imag(y) < 0 else 0 for z, y in zip(z0, yg)])[0][0]
+indexL = np.nonzero([z if 0.99 < np.real(y) < 1.01 and np.imag(y) > 0 else 0 for z, y in zip(z0, yg)])[0][0]
+z_C = z0[indexC]
+y_C = np.conj(yg[indexC])
+z_L = z0[indexL]
+y_L = np.conj(yg[indexL])
 
 axs[0].plot(z0, np.real(zg), z0, np.imag(zg), 'b', z0, z0*0+1, '--k')
-axs[0].plot([0, 0], [min(xg), max(rg)], 'k', [z_1, z_1], [min(xg), max(rg)], '--k')
-axs[0].invert_xaxis()
+axs[0].plot([0, 0], [min(xg), max(rg)], 'k')
 
 axs[1].plot(z0, np.real(yg), z0, np.imag(yg), 'b', z0, z0*0+1, '--k')
-axs[1].plot([0, 0], [min(bg), max(gg)], 'k', [z_1, z_1], [min(bg), max(gg)], '--k')
+axs[1].plot([0, 0], [min(bg), max(gg)], 'k')
+
+for i in range(10):
+    z_adapL = z_L+i*lg/2
+    z_adapC = z_C+i*lg/2
+    axs[0].plot([z_adapL, z_adapL], [min(xg), max(rg)], ':b')
+    axs[1].plot([z_adapL, z_adapL], [min(bg), max(gg)], ':b')
+    print(f"Pos. adaptador: {z_adapL} cm = {z_adapL/lg} lg - y Adaptador: {y_L}")
+    axs[0].plot([z_adapC, z_adapC], [min(xg), max(rg)], ':r')
+    axs[1].plot([z_adapC, z_adapC], [min(bg), max(gg)], ':r')
+    print(f"Pos. adaptador: {z_adapC} cm = {z_adapC/lg} lg - y Adaptador: {y_C}")
+
+axs[0].invert_xaxis()
 axs[1].invert_xaxis()
 
 plt.show()
