@@ -1,0 +1,92 @@
+\documentclass[11pt,a4paper]{extarticle}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[left=1.2cm,right=1.2cm,top=2cm,bottom=2cm]{geometry}
+\date{\small{\today}}
+\usepackage{fancyhdr}
+\usepackage{afterpage}
+\usepackage{titlesec}
+\usepackage{float}
+\usepackage{gensymb}
+\usepackage{xfrac}
+\usepackage{tabularx}
+\usepackage{multicol}
+\usepackage[font=small]{caption}
+\usepackage{scrextend}
+\usepackage[toc,page]{appendix}
+
+\renewcommand\appendixpagename{Apéndices}
+\renewcommand\appendixname{Apéndice}
+
+\DeclareMathOperator{\arctantwo}{arctan2}
+
+\titleformat{\section}{\Large\bfseries}{}{0em}{}[]
+\titleformat{\subsection}{\large\bfseries}{}{0em}{}[]
+\titleformat{\subsubsection}{\bfseries}{}{0em}{}[]
+\titleformat{\chapter}{\large\bfseries}{}{0em}{}[]
+
+
+\setlength\parindent{0pt}
+
+
+\begin{document}
+\title{Adaptación de Impedancia en Guía de Onda Rectangular}
+	\LARGE{\textsc{Laboratorio II}}\\
+	\Large{Adaptación de Impedancia en Guía de Onda Rectangular}\\
+\begin{large}
+\small\textsc{Bercic, Jerónimo}\\
+\small\textsc{Roqueta, Matías Daniel}\\
+\small{Instituto Balseiro, Centro Atómico Bariloche, Comisión Nacional de Energía Atómica}\\
+\end{large}
+\setcounter{page}{1}
+
+\lhead{Laboratorio II}%Materia
+\rhead{Adaptación de Impedancia en Guía de Onda Rectangular}%Título 
+\chead{}
+
+\lfoot{J. Bercic, M. Roqueta}
+\cfoot{Instituto Balseiro} 
+\rfoot{\thepage} 
+\renewcommand{\headrulewidth}{0.4pt} 
+\renewcommand{\footrulewidth}{0.4pt} 
+\pagestyle{fancy}
+
+\hrule
+\normalsize
+\section{Resumen}
+
+\begin{multicols}{2}
+\section{Introducción}
+
+
+\section{Método Experimental}
+
+\section{Resultados}
+
+
+\section{Discusión}
+
+\section{Conclusiones}
+
+\bibliography{LockIn}
+\bibliographystyle{unsrt}
+
+\end{multicols}
+\newpage
+\begin{appendices}
+\vspace{-1em}
+\hrule
+\vspace{1em}
+\normalsize
+\section{Apéndice 1 -}
+\end{appendices}
+
+\begin{multicols}{2}
+
+\end{multicols}
+
+\end{document}
