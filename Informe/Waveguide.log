@@ -1,0 +1,1825 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.10.17)  31 MAR 2022 23:25
+entering extended mode
+**"c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex"
+(c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex
+LaTeX2e <2021-06-01> patch level 1
+L3 programming layer <2021-08-27> (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
+Document Class: article 2021/02/12 v1.4n Standard LaTeX document class
+(C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/base\size11.clo
+File: size11.clo 2021/02/12 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count182
+\c@section=\count183
+\c@subsection=\count184
+\c@subsubsection=\count185
+\c@paragraph=\count186
+\c@subparagraph=\count187
+\c@figure=\count188
+\c@table=\count189
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks16
+\inpenc@posthook=\toks17
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
+Package: babel 2021/07/22 3.63 The Babel package
+ (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def
+File: babel.def 2021/07/22 3.63 Babel common definitions
+\babel@savecnt=\count190
+\U@D=\dimen139
+\l@unhyphenated=\language79
+ (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
+\bbl@readstream=\read2
+)
+\bbl@dirlevel=\count191
+
+*************************************
+* Local config file bblopts.cfg used
+*
+(C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of babel
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/babel-spanish\spanish.ldf
+Language: spanish.ldf 2021/05/27 v5.0q Spanish support from the babel system
+\es@quottoks=\toks18
+\es@quotdepth=\count192
+Package babel Info: Making " an active character on input line 570.
+Package babel Info: Making . an active character on input line 675.
+Package babel Info: Making < an active character on input line 722.
+Package babel Info: Making > an active character on input line 722.
+)) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2021/04/20 v2.17j AMS math features
+\@mathmargin=\skip49
+
+For additional information on amsmath, use the `?' option.
+(C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+ (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks19
+\ex@=\dimen140
+)) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen141
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count193
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count194
+\leftroot@=\count195
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count196
+\DOTSCASE@=\count197
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box50
+\strutbox@=\box51
+\big@size=\dimen142
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count198
+\c@MaxMatrixCols=\count199
+\dotsspace@=\muskip16
+\c@parentequation=\count266
+\dspbrk@lvl=\count267
+\tag@help=\toks20
+\row@=\count268
+\column@=\count269
+\maxfields@=\count270
+\andhelp@=\toks21
+\eqnshift@=\dimen143
+\alignsep@=\dimen144
+\tagshift@=\dimen145
+\tagwidth@=\dimen146
+\totwidth@=\dimen147
+\lineht@=\dimen148
+\@envbody=\toks22
+\multlinegap=\skip50
+\multlinetaggap=\skip51
+\mathdisplay@stack=\toks23
+LaTeX Info: Redefining \[ on input line 2923.
+LaTeX Info: Redefining \] on input line 2924.
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2020/12/05 v1.2c Enhanced LaTeX Graphics (DPC,SPQR)
+ (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks24
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
+ (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+ (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen149
+\Gin@req@width=\dimen150
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+ (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+ (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+))
+\Gm@cnth=\count271
+\Gm@cntv=\count272
+\c@Gm@tempcnt=\count273
+\Gm@bindingoffset=\dimen151
+\Gm@wd@mp=\dimen152
+\Gm@odd@mp=\dimen153
+\Gm@even@mp=\dimen154
+\Gm@layoutwidth=\dimen155
+\Gm@layoutheight=\dimen156
+\Gm@layouthoffset=\dimen157
+\Gm@layoutvoffset=\dimen158
+\Gm@dimlist=\toks25
+ (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
+Package: fancyhdr 2021/01/28 v4.0.1 Extensive control of page headers and footers
+\f@nch@headwidth=\skip52
+\f@nch@O@elh=\skip53
+\f@nch@O@erh=\skip54
+\f@nch@O@olh=\skip55
+\f@nch@O@orh=\skip56
+\f@nch@O@elf=\skip57
+\f@nch@O@erf=\skip58
+\f@nch@O@olf=\skip59
+\f@nch@O@orf=\skip60
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/tools\afterpage.sty
+Package: afterpage 2014/10/28 v1.08 After-Page Package (DPC)
+\AP@output=\toks26
+\AP@partial=\box52
+\AP@footins=\box53
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.sty
+Package: titlesec 2021/07/05 v2.14 Sectioning titles
+\ttl@box=\box54
+\beforetitleunit=\skip61
+\aftertitleunit=\skip62
+\ttl@plus=\dimen159
+\ttl@minus=\dimen160
+\ttl@toksa=\toks27
+\titlewidth=\dimen161
+\titlewidthlast=\dimen162
+\titlewidthfirst=\dimen163
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count274
+\float@exts=\toks28
+\float@box=\box55
+\@float@everytoks=\toks29
+\@floatcapt=\box56
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/was\gensymb.sty
+Package: gensymb 2003/07/02 v1.0 (WaS)
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xfrac\xfrac.sty (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
+Package: expl3 2021-08-27 L3 programming layer (loader) 
+ (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
+File: l3backend-pdftex.def 2021-08-04 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count275
+\l__pdf_internal_box=\box57
+)) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/l3keys2e\l3keys2e.sty
+Package: l3keys2e 2021-08-27 LaTeX2e option processing using LaTeX3 keys
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/base\textcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xparse.sty
+Package: xparse 2021-08-27 L3 Experimental document command parser
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xtemplate\xtemplate.sty
+Package: xtemplate 2021-08-27 L3 Experimental prototype document functions
+\l__xtemplate_tmp_dim=\dimen164
+\l__xtemplate_tmp_int=\count276
+\l__xtemplate_tmp_muskip=\muskip17
+\l__xtemplate_tmp_skip=\skip63
+)
+Package: xfrac 2021-08-27 L3 Experimental split-level fractions
+\l__xfrac_slash_box=\box58
+\l__xfrac_tmp_box=\box59
+\l__xfrac_denominator_bot_sep_dim=\dimen165
+\l__xfrac_numerator_bot_sep_dim=\dimen166
+\l__xfrac_numerator_top_sep_dim=\dimen167
+\l__xfrac_slash_left_sep_dim=\dimen168
+\l__xfrac_slash_right_sep_dim=\dimen169
+\l__xfrac_slash_left_muskip=\muskip18
+\l__xfrac_slash_right_muskip=\muskip19
+
+Package xtemplate Info: Declaring object type 'xfrac' taking 3 argument(s) on
+(xtemplate)             line 80.
+
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/tools\tabularx.sty
+Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
+ (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+Package: array 2021/04/20 v2.5e Tabular extension package (FMi)
+\col@sep=\dimen170
+\ar@mcellbox=\box60
+\extrarowheight=\dimen171
+\NC@list=\toks30
+\extratabsurround=\skip64
+\backup@length=\skip65
+\ar@cellbox=\box61
+)
+\TX@col@width=\dimen172
+\TX@old@table=\dimen173
+\TX@old@col=\dimen174
+\TX@target=\dimen175
+\TX@delta=\dimen176
+\TX@cols=\count277
+\TX@ftn=\toks31
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/tools\multicol.sty
+Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
+\c@tracingmulticols=\count278
+\mult@box=\box62
+\multicol@leftmargin=\dimen177
+\c@unbalance=\count279
+\c@collectmore=\count280
+\doublecol@number=\count281
+\multicoltolerance=\count282
+\multicolpretolerance=\count283
+\full@width=\dimen178
+\page@free=\dimen179
+\premulticols=\dimen180
+\postmulticols=\dimen181
+\multicolsep=\skip66
+\multicolbaselineskip=\skip67
+\partial@page=\box63
+\last@line=\box64
+\maxbalancingoverflow=\dimen182
+\mult@rightbox=\box65
+\mult@grightbox=\box66
+\mult@gfirstbox=\box67
+\mult@firstbox=\box68
+\@tempa=\box69
+\@tempa=\box70
+\@tempa=\box71
+\@tempa=\box72
+\@tempa=\box73
+\@tempa=\box74
+\@tempa=\box75
+\@tempa=\box76
+\@tempa=\box77
+\@tempa=\box78
+\@tempa=\box79
+\@tempa=\box80
+\@tempa=\box81
+\@tempa=\box82
+\@tempa=\box83
+\@tempa=\box84
+\@tempa=\box85
+\@tempa=\box86
+\@tempa=\box87
+\@tempa=\box88
+\@tempa=\box89
+\@tempa=\box90
+\@tempa=\box91
+\@tempa=\box92
+\@tempa=\box93
+\@tempa=\box94
+\@tempa=\box95
+\@tempa=\box96
+\@tempa=\box97
+\@tempa=\box98
+\@tempa=\box99
+\@tempa=\box100
+\@tempa=\box101
+\@tempa=\box102
+\@tempa=\box103
+\@tempa=\box104
+\@tempa=\box105
+\c@minrows=\count284
+\c@columnbadness=\count285
+\c@finalcolumnbadness=\count286
+\last@try=\dimen183
+\multicolovershoot=\dimen184
+\multicolundershoot=\dimen185
+\mult@nat@firstbox=\box106
+\colbreak@box=\box107
+\mc@col@check@num=\count287
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
+Package: caption 2022/03/01 v3.6b Customizing captions (AR)
+ (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
+Package: caption3 2022/03/17 v2.3b caption3 kernel (AR)
+\caption@tempdima=\dimen186
+\captionmargin=\dimen187
+\caption@leftmargin=\dimen188
+\caption@rightmargin=\dimen189
+\caption@width=\dimen190
+\caption@indent=\dimen191
+\caption@parindent=\dimen192
+\caption@hangindent=\dimen193
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count288
+\c@continuedfloat=\count289
+Package caption Info: float package is loaded.
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrextend.sty
+Package: scrextend 2021/11/13 v3.35 KOMA-Script package (extend other classes with features of KOMA-Script classes)
+ (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrkbase.sty
+Package: scrkbase 2021/11/13 v3.35 KOMA-Script package (KOMA-Script-dependent basics and keyval usage)
+ (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrbase.sty
+Package: scrbase 2021/11/13 v3.35 KOMA-Script package (KOMA-Script-independent basics and keyval usage)
+ (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlfile.sty
+Package: scrlfile 2021/11/13 v3.35 KOMA-Script package (file load hooks)
+ (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlfile-hook-3.34.sty
+Package: scrlfile-hook-3.34 2021/11/13 v3.35 KOMA-Script package (using LaTeX hooks)
+ (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlogo.sty
+Package: scrlogo 2021/11/13 v3.35 KOMA-Script package (logo)
+)))
+Applying: [2021/05/01] Usage of raw or classic option list on input line 252.
+Already applied: [0000/00/00] Usage of raw or classic option list on input line 368.
+))) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/appendix\appendix.sty
+Package: appendix 2020/02/08 v1.2c extra appendix facilities
+\c@@pps=\count290
+\c@@ppsavesec=\count291
+\c@@ppsaveapp=\count292
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tikz.sty (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.sty (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs.sty (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-common.tex
+\pgfutil@everybye=\toks32
+\pgfutil@tempdima=\dimen194
+\pgfutil@tempdimb=\dimen195
+ (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-common-lists.tex)) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-latex.def
+\pgfutil@abb=\box108
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfrcs.code.tex (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revision.tex)
+Package: pgfrcs 2021/05/15 v3.1.9a (3.1.9a)
+))
+Package: pgf 2021/05/15 v3.1.9a (3.1.9a)
+ (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgfcore.sty (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfsys.sty (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys.code.tex
+Package: pgfsys 2021/05/15 v3.1.9a (3.1.9a)
+ (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks33
+\pgfkeys@temptoks=\toks34
+ (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeysfiltered.code.tex
+\pgfkeys@tmptoks=\toks35
+))
+\pgf@x=\dimen196
+\pgf@y=\dimen197
+\pgf@xa=\dimen198
+\pgf@ya=\dimen199
+\pgf@xb=\dimen256
+\pgf@yb=\dimen257
+\pgf@xc=\dimen258
+\pgf@yc=\dimen259
+\pgf@xd=\dimen260
+\pgf@yd=\dimen261
+\w@pgf@writea=\write3
+\r@pgf@reada=\read3
+\c@pgf@counta=\count293
+\c@pgf@countb=\count294
+\c@pgf@countc=\count295
+\c@pgf@countd=\count296
+\t@pgf@toka=\toks36
+\t@pgf@tokb=\toks37
+\t@pgf@tokc=\toks38
+\pgf@sys@id@count=\count297
+ (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf.cfg
+File: pgf.cfg 2021/05/15 v3.1.9a (3.1.9a)
+)
+Driver file for pgf: pgfsys-pdftex.def
+ (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2021/05/15 v3.1.9a (3.1.9a)
+ (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2021/05/15 v3.1.9a (3.1.9a)
+))) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfsyssoftpath@smallbuffer@items=\count298
+\pgfsyssoftpath@bigbuffer@items=\count299
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+ (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore.code.tex
+Package: pgfcore 2021/05/15 v3.1.9a (3.1.9a)
+ (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code.tex (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathcalc.code.tex (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathutil.code.tex) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathparser.code.tex
+\pgfmath@dimen=\dimen262
+\pgfmath@count=\count300
+\pgfmath@box=\box109
+\pgfmath@toks=\toks39
+\pgfmath@stack@operand=\toks40
+\pgfmath@stack@operation=\toks41
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.code.tex (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.basic.code.tex) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.trigonometric.code.tex) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.random.code.tex) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.comparison.code.tex) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.base.code.tex) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.round.code.tex) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.misc.code.tex) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.integerarithmetics.code.tex))) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count301
+)) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.code.tex) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@picminx=\dimen263
+\pgf@picmaxx=\dimen264
+\pgf@picminy=\dimen265
+\pgf@picmaxy=\dimen266
+\pgf@pathminx=\dimen267
+\pgf@pathmaxx=\dimen268
+\pgf@pathminy=\dimen269
+\pgf@pathmaxy=\dimen270
+\pgf@xx=\dimen271
+\pgf@xy=\dimen272
+\pgf@yx=\dimen273
+\pgf@yy=\dimen274
+\pgf@zx=\dimen275
+\pgf@zy=\dimen276
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@path@lastx=\dimen277
+\pgf@path@lasty=\dimen278
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@shorten@end@additional=\dimen279
+\pgf@shorten@start@additional=\dimen280
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfpic=\box110
+\pgf@hbox=\box111
+\pgf@layerbox@main=\box112
+\pgf@picture@serial@count=\count302
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgflinewidth=\dimen281
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoretransformations.code.tex
+File: pgfcoretransformations.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@pt@x=\dimen282
+\pgf@pt@y=\dimen283
+\pgf@pt@temp=\dimen284
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfarrowsep=\dimen285
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@max=\dimen286
+\pgf@sys@shading@range@num=\count303
+\pgf@shadingcount=\count304
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+ (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfexternal@startupbox=\box113
+)) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+))) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfnodeparttextbox=\box114
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@nodesepstart=\dimen287
+\pgf@nodesepend=\dimen288
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2021/05/15 v3.1.9a (3.1.9a)
+)) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgffor.sty (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys.sty (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys.code.tex)) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.sty (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code.tex)) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgffor.code.tex
+Package: pgffor 2021/05/15 v3.1.9a (3.1.9a)
+ (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code.tex)
+\pgffor@iter=\dimen289
+\pgffor@skip=\dimen290
+\pgffor@stack=\toks42
+\pgffor@toks=\toks43
+)) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz\tikz.code.tex
+Package: tikz 2021/05/15 v3.1.9a (3.1.9a)
+ (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@plot@mark@count=\count305
+\pgfplotmarksize=\dimen291
+)
+\tikz@lastx=\dimen292
+\tikz@lasty=\dimen293
+\tikz@lastxsaved=\dimen294
+\tikz@lastysaved=\dimen295
+\tikz@lastmovetox=\dimen296
+\tikz@lastmovetoy=\dimen297
+\tikzleveldistance=\dimen298
+\tikzsiblingdistance=\dimen299
+\tikz@figbox=\box115
+\tikz@figbox@bg=\box116
+\tikz@tempbox=\box117
+\tikz@tempbox@bg=\box118
+\tikztreelevel=\count306
+\tikznumberofchildren=\count307
+\tikznumberofcurrentchild=\count308
+\tikz@fig@count=\count309
+
+(C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfmatrixcurrentrow=\count310
+\pgfmatrixcurrentcolumn=\count311
+\pgf@matrix@numberofcolumns=\count312
+)
+\tikz@expandcount=\count313
+ (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+))) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/tkz-euclide\tkz-euclide.sty
+2022/02/25 4.051b tkz-euclide.sty
+Package: tkz-euclide  2022/02/25 4.051b for pure Euclidean Geometry 
+(C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryangles.code.tex
+File: tikzlibraryangles.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryarrows.code.tex
+File: tikzlibraryarrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+ (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryarrows.code.tex
+File: pgflibraryarrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\arrowsize=\dimen300
+)) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryarrows.meta.code.tex
+File: pgflibraryarrows.meta.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfarrowinset=\dimen301
+\pgfarrowlength=\dimen302
+\pgfarrowwidth=\dimen303
+\pgfarrowlinewidth=\dimen304
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarydecorations.code.tex (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmoduledecorations.code.tex
+\pgfdecoratedcompleteddistance=\dimen305
+\pgfdecoratedremainingdistance=\dimen306
+\pgfdecoratedinputsegmentcompleteddistance=\dimen307
+\pgfdecoratedinputsegmentremainingdistance=\dimen308
+\pgf@decorate@distancetomove=\dimen309
+\pgf@decorate@repeatstate=\count314
+\pgfdecorationsegmentamplitude=\dimen310
+\pgfdecorationsegmentlength=\dimen311
+)
+\tikz@lib@dec@box=\box119
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarydecorations.markings.code.tex (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/decorations\pgflibrarydecorations.markings.code.tex)) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarydecorations.pathreplacing.code.tex (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/decorations\pgflibrarydecorations.pathreplacing.code.tex)) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarydecorations.shapes.code.tex (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/decorations\pgflibrarydecorations.shapes.code.tex)) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarydecorations.text.code.tex (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/decorations\pgflibrarydecorations.text.code.tex
+\pgf@lib@dec@text@box=\box120
+)
+\tikz@lib@dec@te@box=\box121
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarydecorations.pathmorphing.code.tex (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/decorations\pgflibrarydecorations.pathmorphing.code.tex)) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryintersections.code.tex (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryintersections.code.tex (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryfpu.code.tex)
+\pgf@intersect@solutions=\count315
+)) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryplotmarks.code.tex
+File: tikzlibraryplotmarks.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+ (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryplotmarks.code.tex
+File: pgflibraryplotmarks.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryquotes.code.tex
+File: tikzlibraryquotes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshapes.misc.code.tex
+File: tikzlibraryshapes.misc.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+ (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shapes\pgflibraryshapes.misc.code.tex
+File: pgflibraryshapes.misc.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xfp\xfp.sty
+Package: xfp 2021-08-27 L3 Floating point unit
+)
+\tkzRadius=\dimen312
+\tkzLength=\dimen313
+\tkz@radi=\dimen314
+\tkz@ax=\dimen315
+\tkz@ay=\dimen316
+\tkz@bx=\dimen317
+\tkz@by=\dimen318
+\tkz@cx=\dimen319
+\tkz@cy=\dimen320
+\tkz@dx=\dimen321
+\tkz@dy=\dimen322
+\tkz@cntmk=\count316
+
+Local configuration file tkz-euclide.cfg found and used
+(C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/tkz-euclide\tkz-euclide.cfg
+2022/02/25 4.051b tkz-euclide.cfg
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/tkz-euclide\tkz-tools-eu-base.tex
+2022/02/25 4.051b tkz-tools-eu-base.tex
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/tkz-euclide\tkz-tools-eu-utilities.tex
+2022/02/25 4.051b tkz-tools-eu-utilities.tex
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/tkz-euclide\tkz-tools-eu-BB.tex
+2022/02/25 4.051b tkz-obj-eu-BB.tex
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/tkz-euclide\tkz-obj-eu-grids.tex
+2022/02/25 4.051b tkz-obj-eu-grids.tex
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/tkz-euclide\tkz-lib-eu-marks.tex
+2022/02/25 4.051b tkz-lib-eu-marks.tex
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/tkz-euclide\tkz-tools-eu-text.tex
+2022/02/25 4.051b tkz-tools-eu-text.tex
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/tkz-euclide\tkz-lib-eu-shape.tex
+2022/02/25 4.051b tkz-lib-eu-shape.tex
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/tkz-euclide\tkz-obj-eu-axesmin.tex
+2022/02/25 4.051b tkz-obj-eu-axesmin
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/tkz-euclide\tkz-tools-eu-colors.tex
+2022/02/25 4.051b tkz-tools-eu-colors
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/tkz-euclide\tkz-obj-eu-points.tex
+2022/02/25 4.051b tkz-obj-eu-points.tex
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/tkz-euclide\tkz-tools-eu-math.tex
+2022/02/25 4.051b tkz-tools-eu-math.tex
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/tkz-euclide\tkz-tools-eu-intersections.tex
+2022/01/22 4.04 tkz-tools-intersections.tex
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/tkz-euclide\tkz-tools-eu-angles.tex
+2022/02/25 4.051b tkz-tools-angles.tex
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/tkz-euclide\tkz-obj-eu-compass.tex
+2022/02/25 4.051b tkz-obj-eu-compass.tex
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/tkz-euclide\tkz-obj-eu-circles.tex
+2022/02/25 4.051b tkz-obj-eu-circles.tex
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/tkz-euclide\tkz-obj-eu-circles-by.tex
+2022/02/25 4.051b tkz-obj-eu-circles.tex
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/tkz-euclide\tkz-obj-eu-draw-angles.tex
+2022/02/25 4.051b tkz-tool-eu-angles.tex
+\tkz@arcsize=\dimen323
+\tkz@fillsize=\dimen324
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/tkz-euclide\tkz-obj-eu-draw-circles.tex
+2022/02/25 4.051b tkz-obj-eu-draw-circles.tex
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/tkz-euclide\tkz-obj-eu-draw-lines.tex
+2022/02/25 4.051b tkz-obj-eu-draw-lines.tex
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/tkz-euclide\tkz-obj-eu-draw-polygons.tex
+2022/02/25 4.051b tkz-obj-eu-polygons.tex
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/tkz-euclide\tkz-obj-eu-draw-triangles.tex
+2022/02/25 4.051b tkz-obj-eu-draw-triangles.tex
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/tkz-euclide\tkz-obj-eu-lines.tex
+2022/02/25 4.051b tkz-obj-eu-lines.tex
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/tkz-euclide\tkz-obj-eu-points-by.tex
+2022/02/25 4.051b tkz-tools-el-points-by.tex
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/tkz-euclide\tkz-obj-eu-points-rnd.tex
+2022/02/25 4.051b tkz-obj-el-points-rnd.tex
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/tkz-euclide\tkz-obj-eu-points-spc.tex
+2022/02/25 4.051b tkz-obj-el-points.tex
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/tkz-euclide\tkz-obj-eu-points-with.tex
+2022/02/25 4.051b tkz-obj-el-points-with.tex
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/tkz-euclide\tkz-obj-eu-polygons.tex
+2022/02/25 4.051b tkz-obj-eu-polygons.tex
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/tkz-euclide\tkz-obj-eu-protractor.tex
+2022/02/25 4.051b tkz-obj-eu-protractor.tex
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/tkz-euclide\tkz-obj-eu-sectors.tex
+2022/02/25 4.051b tkz-obj-eu-sectors.tex
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/tkz-euclide\tkz-obj-eu-show.tex
+2022/02/25 4.051b tkz-obj-eu-show.tex
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/tkz-euclide\tkz-obj-eu-triangles.tex
+2022/02/25 4.051b tkz-obj-eu-triangles.tex
+)) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/circuitikz\circuitikz.sty
+Package: circuitikz 2022/02/04{} The CircuiTikz circuit drawing package version 1.4.6
+ (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarybending.code.tex
+File: tikzlibrarybending.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+ (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodulebending.code.tex
+File: pgfmodulebending.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+ (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodulenonlineartransformations.code.tex
+File: pgfmodulenonlineartransformations.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgftransformnonlinearflatness=\dimen325
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibrarycurvilinear.code.tex
+File: pgflibrarycurvilinear.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@curvilinear@time@a=\dimen326
+\pgf@curvilinear@length@a=\dimen327
+\pgf@curvilinear@length@b=\dimen328
+\pgf@curvilinear@length@c=\dimen329
+\pgf@curvilinear@length@d=\dimen330
+)
+\pgf@arrows@the@rigidity=\dimen331
+)) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryfpu.code.tex) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcirc.defines.tex
+\pgf@circ@count@a=\count317
+\pgf@circ@count@b=\count318
+\pgf@circ@count@c=\count319
+\pgf@circ@res@up=\dimen332
+\pgf@circ@res@down=\dimen333
+\pgf@circ@res@zero=\dimen334
+\pgf@circ@res@left=\dimen335
+\pgf@circ@res@right=\dimen336
+\pgf@circ@res@other=\dimen337
+\pgf@circ@res@step=\dimen338
+\pgf@circ@res@temp=\dimen339
+\pgf@circ@Rlen=\dimen340
+\pgf@circ@scaled@Rlen=\dimen341
+\pgfstartlinewidth=\dimen342
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcircutils.tex
+\ctikz@scratchbox=\box122
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcircpath.tex) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcircshapes.tex) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcircmonopoles.tex) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcircbipoles.tex) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcirctripoles.tex
+\pgf@circ@res@count=\count320
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcircquadpoles.tex) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcircmultipoles.tex) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcirclabel.tex) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcircvoltage.tex
+\pgfcirc@labelshift=\dimen343
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcirccurrent.tex) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcircflow.tex) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/xstring\xstring.sty (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/xstring\xstring.tex
+\integerpart=\count321
+\decimalpart=\count322
+)
+Package: xstring 2021/07/21 v1.84 String manipulations (CT)
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/siunitx\siunitx.sty
+Package: siunitx 2022-02-15 v3.0.49 A comprehensive (SI) units package
+\l__siunitx_angle_tmp_dim=\dimen344
+\l__siunitx_angle_marker_box=\box123
+\l__siunitx_angle_unit_box=\box124
+\l__siunitx_compound_count_int=\count323
+ (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/translations\translations.sty
+Package: translations 2022/02/05 v1.12 internationalization of LaTeX2e packages (CN)
+ (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count324
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+ (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+))
+\l__siunitx_number_exponent_fixed_int=\count325
+\l__siunitx_number_min_decimal_int=\count326
+\l__siunitx_number_min_integer_int=\count327
+\l__siunitx_number_round_precision_int=\count328
+\l__siunitx_number_group_minimum_int=\count329
+\l__siunitx_table_tmp_box=\box125
+\l__siunitx_table_tmp_dim=\dimen345
+\l__siunitx_table_column_width_dim=\dimen346
+\l__siunitx_table_integer_box=\box126
+\l__siunitx_table_decimal_box=\box127
+\l__siunitx_table_before_box=\box128
+\l__siunitx_table_after_box=\box129
+\l__siunitx_table_before_dim=\dimen347
+\l__siunitx_table_carry_dim=\dimen348
+\l__siunitx_unit_tmp_int=\count330
+\l__siunitx_unit_position_int=\count331
+\l__siunitx_unit_total_int=\count332
+)) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/stackengine\stackengine.sty
+Package: stackengine 2021/07/22 v4.11\ Stacking text and objects in convenient ways
+ (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/listofitems\listofitems.sty (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/generic/listofitems\listofitems.tex
+\loi_cnt_foreach_nest=\count333
+\loi_nestcnt=\count334
+)
+Package: listofitems 2019/08/21 v1.63 Grab items in lists using user-specified sep char (CT)
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count335
+\calc@Bcount=\count336
+\calc@Adimen=\dimen349
+\calc@Bdimen=\dimen350
+\calc@Askip=\skip68
+\calc@Bskip=\skip69
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count337
+\calc@Cskip=\skip70
+)
+\c@@stackindex=\count338
+\@boxshift=\skip71
+\stack@tmplength=\skip72
+\temp@stkl=\skip73
+\@stackedboxwidth=\skip74
+\@addedbox=\box130
+\@anchorbox=\box131
+\@insetbox=\box132
+\se@backgroundbox=\box133
+\stackedbox=\box134
+\@centerbox=\box135
+\c@ROWcellindex@=\count339
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mathtools.sty
+Package: mathtools 2022/02/07 v1.28a mathematical typesetting tools
+ (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mhsetup.sty
+Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
+)
+\g_MT_multlinerow_int=\count340
+\l_MT_multwidth_dim=\dimen351
+\origjot=\skip75
+\l_MT_shortvdotswithinadjustabove_dim=\dimen352
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen353
+\l_MT_above_intertext_sep=\dimen354
+\l_MT_below_intertext_sep=\dimen355
+\l_MT_above_shortintertext_sep=\dimen356
+\l_MT_below_shortintertext_sep=\dimen357
+\xmathstrut@box=\box136
+\xmathstrut@dim=\dimen358
+) (Waveguide.aux)
+\openout1 = `Waveguide.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Info: Redefining \. on input line 43.
+LaTeX Info: Redefining \% on input line 43.
+ (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count341
+\scratchdimen=\dimen359
+\scratchbox=\box137
+\nofMPsegments=\count342
+\nofMParguments=\count343
+\everyMPshowfont=\toks44
+\MPscratchCnt=\count344
+\MPscratchDim=\dimen360
+\MPnumerator=\count345
+\makeMPintoPDFobject=\count346
+\everyMPtoPDFconversion=\toks45
+) (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(34.14322pt, 529.22144pt, 34.14322pt)
+* v-part:(T,H,B)=(56.9055pt, 731.23584pt, 56.9055pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=529.22144pt
+* \textheight=731.23584pt
+* \oddsidemargin=-38.12677pt
+* \evensidemargin=-38.12677pt
+* \topmargin=-52.36449pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=11.0pt
+* \footskip=30.0pt
+* \marginparwidth=50.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+\symgns@font=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `gns@font' in version `bold'
+(Font)                  TS1/cmr/m/n --> TS1/cmr/b/n on input line 43.
+Package gensymb Info: Math companion symbols declared on input line 43.
+LaTeX Info: Redefining \degree on input line 43.
+LaTeX Info: Redefining \celsius on input line 43.
+Package gensymb Info: Using text companion symbols for \degree, \celsius and \perthousand on input line 43.
+LaTeX Info: Redefining \ohm on input line 43.
+Package gensymb Info: Using \textohm for \ohm on input line 43.
+Package gensymb Info: Using \textmu for \micro on input line 43.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+(C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/translations/dicts\translations-basic-dictionary-spanish.trsl
+File: translations-basic-dictionary-spanish.trsl (spanish translation file `translations-basic-dictionary')
+)
+Underfull \hbox (badness 10000) in paragraph at lines 45--53
+
+ []
+
+
+LaTeX Warning: File `images/Imagen1.jpg' not found on input line 73.
+
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:73: Package pdftex.def Error: File `images/Imagen1.jpg' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.73 ...udegraphics[scale=0.4]{images/Imagen1.jpg}
+                                                   \\
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 76.
+(C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 76.
+ (C:\Users\Jero Bercic\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+
+LaTeX Warning: File `images/TE10.jpg' not found on input line 78.
+
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:78: Package pdftex.def Error: File `images/TE10.jpg' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.78 ...cludegraphics[scale=0.15]{images/TE10.jpg}
+                                                   \\
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 81--83
+
+ []
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:88: Argument of \language@active@arg> has an extra }.
+<inserted text> 
+                \par 
+l.88 \draw[->]
+               (-2,1) -- (3,1);
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:88: Paragraph ended before \language@active@arg> was complete.
+<to be read again> 
+                   \par 
+l.88 \draw[->]
+               (-2,1) -- (3,1);
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:88: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.88 \draw[->]
+               (-2,1) -- (3,1);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:88: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.88 \draw[->]
+               (-2,1) -- (3,1);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:88: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.88 \draw[->]
+               (-2,1) -- (3,1);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:88: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.88 \draw[->]
+               (-2,1) -- (3,1);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:88: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.88 \draw[->]
+               (-2,1) -- (3,1);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:88: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.88 \draw[->]
+               (-2,1) -- (3,1);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:88: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.88 \draw[->]
+               (-2,1) -- (3,1);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:88: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.88 \draw[->]
+               (-2,1) -- (3,1);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:88: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.88 \draw[->]
+               (-2,1) -- (3,1);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:88: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.88 \draw[->]
+               (-2,1) -- (3,1);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:88: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.88 \draw[->]
+               (-2,1) -- (3,1);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:88: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.88 \draw[->]
+               (-2,1) -- (3,1);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:88: Package xcolor Error: Undefined color `\advance \par@deathcycles \@ne '.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.88 \draw[->] (-2,1) -- (3,1);
+                               
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:88: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.88 \draw[->] (-2,1) -- (3,1);
+                               
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:88: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.88 \draw[->] (-2,1) -- (3,1);
+                               
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:88: Package xcolor Error: Undefined color `\advance \par@deathcycles \@ne '.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.88 \draw[->] (-2,1) -- (3,1);
+                               
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:89: Argument of \language@active@arg> has an extra }.
+<inserted text> 
+                \par 
+l.89 \draw[->]
+               (-2,3) -- (3,3);
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:89: Paragraph ended before \language@active@arg> was complete.
+<to be read again> 
+                   \par 
+l.89 \draw[->]
+               (-2,3) -- (3,3);
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:89: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.89 \draw[->]
+               (-2,3) -- (3,3);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:89: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.89 \draw[->]
+               (-2,3) -- (3,3);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:89: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.89 \draw[->]
+               (-2,3) -- (3,3);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:89: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.89 \draw[->]
+               (-2,3) -- (3,3);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:89: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.89 \draw[->]
+               (-2,3) -- (3,3);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:89: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.89 \draw[->]
+               (-2,3) -- (3,3);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:89: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.89 \draw[->]
+               (-2,3) -- (3,3);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:89: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.89 \draw[->]
+               (-2,3) -- (3,3);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:89: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.89 \draw[->]
+               (-2,3) -- (3,3);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:89: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.89 \draw[->]
+               (-2,3) -- (3,3);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:89: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.89 \draw[->]
+               (-2,3) -- (3,3);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:89: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.89 \draw[->]
+               (-2,3) -- (3,3);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:89: Package xcolor Error: Undefined color `\advance \par@deathcycles \@ne '.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.89 \draw[->] (-2,3) -- (3,3);
+                               
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:89: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.89 \draw[->] (-2,3) -- (3,3);
+                               
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:89: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.89 \draw[->] (-2,3) -- (3,3);
+                               
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:89: Package xcolor Error: Undefined color `\advance \par@deathcycles \@ne '.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.89 \draw[->] (-2,3) -- (3,3);
+                               
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:94: Argument of \language@active@arg> has an extra }.
+<inserted text> 
+                \par 
+l.94 \draw[->]
+               (-5.5,3) -- node[above] {$i(z,t)$} (-4.2,3);
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:94: Paragraph ended before \language@active@arg> was complete.
+<to be read again> 
+                   \par 
+l.94 \draw[->]
+               (-5.5,3) -- node[above] {$i(z,t)$} (-4.2,3);
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:94: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.94 \draw[->]
+               (-5.5,3) -- node[above] {$i(z,t)$} (-4.2,3);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:94: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.94 \draw[->]
+               (-5.5,3) -- node[above] {$i(z,t)$} (-4.2,3);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:94: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.94 \draw[->]
+               (-5.5,3) -- node[above] {$i(z,t)$} (-4.2,3);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:94: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.94 \draw[->]
+               (-5.5,3) -- node[above] {$i(z,t)$} (-4.2,3);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:94: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.94 \draw[->]
+               (-5.5,3) -- node[above] {$i(z,t)$} (-4.2,3);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:94: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.94 \draw[->]
+               (-5.5,3) -- node[above] {$i(z,t)$} (-4.2,3);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:94: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.94 \draw[->]
+               (-5.5,3) -- node[above] {$i(z,t)$} (-4.2,3);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:94: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.94 \draw[->]
+               (-5.5,3) -- node[above] {$i(z,t)$} (-4.2,3);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:94: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.94 \draw[->]
+               (-5.5,3) -- node[above] {$i(z,t)$} (-4.2,3);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:94: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.94 \draw[->]
+               (-5.5,3) -- node[above] {$i(z,t)$} (-4.2,3);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:94: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.94 \draw[->]
+               (-5.5,3) -- node[above] {$i(z,t)$} (-4.2,3);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:94: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.94 \draw[->]
+               (-5.5,3) -- node[above] {$i(z,t)$} (-4.2,3);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:94: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.94 ...-5.5,3) -- node[above] {$i(z,t)$} (-4.2,3)
+                                                  ;
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:94: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.94 ...-5.5,3) -- node[above] {$i(z,t)$} (-4.2,3)
+                                                  ;
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:94: Package xcolor Error: Undefined color `\advance \par@deathcycles \@ne '.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.94 ...-5.5,3) -- node[above] {$i(z,t)$} (-4.2,3)
+                                                  ;
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:94: Package xcolor Error: Undefined color `\advance \par@deathcycles \@ne '.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.94 ...-5.5,3) -- node[above] {$i(z,t)$} (-4.2,3)
+                                                  ;
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:94: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.94 ...-5.5,3) -- node[above] {$i(z,t)$} (-4.2,3)
+                                                  ;
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:94: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.94 ...-5.5,3) -- node[above] {$i(z,t)$} (-4.2,3)
+                                                  ;
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:94: Package xcolor Error: Undefined color `\advance \par@deathcycles \@ne '.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.94 ...-5.5,3) -- node[above] {$i(z,t)$} (-4.2,3)
+                                                  ;
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:94: Package xcolor Error: Undefined color `\advance \par@deathcycles \@ne '.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.94 ...5.5,3) -- node[above] {$i(z,t)$} (-4.2,3);
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:94: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.94 ...5.5,3) -- node[above] {$i(z,t)$} (-4.2,3);
+                                                  
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:94: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.94 ...5.5,3) -- node[above] {$i(z,t)$} (-4.2,3);
+                                                  
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:94: Package xcolor Error: Undefined color `\advance \par@deathcycles \@ne '.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.94 ...5.5,3) -- node[above] {$i(z,t)$} (-4.2,3);
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:95: Argument of \language@active@arg> has an extra }.
+<inserted text> 
+                \par 
+l.95 \draw[->]
+               (3.2,3) -- node[above] {$i(z+dz,t)$} (4.4,3);
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:95: Paragraph ended before \language@active@arg> was complete.
+<to be read again> 
+                   \par 
+l.95 \draw[->]
+               (3.2,3) -- node[above] {$i(z+dz,t)$} (4.4,3);
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:95: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.95 \draw[->]
+               (3.2,3) -- node[above] {$i(z+dz,t)$} (4.4,3);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:95: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.95 \draw[->]
+               (3.2,3) -- node[above] {$i(z+dz,t)$} (4.4,3);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:95: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.95 \draw[->]
+               (3.2,3) -- node[above] {$i(z+dz,t)$} (4.4,3);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:95: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.95 \draw[->]
+               (3.2,3) -- node[above] {$i(z+dz,t)$} (4.4,3);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:95: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.95 \draw[->]
+               (3.2,3) -- node[above] {$i(z+dz,t)$} (4.4,3);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:95: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.95 \draw[->]
+               (3.2,3) -- node[above] {$i(z+dz,t)$} (4.4,3);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:95: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.95 \draw[->]
+               (3.2,3) -- node[above] {$i(z+dz,t)$} (4.4,3);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:95: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.95 \draw[->]
+               (3.2,3) -- node[above] {$i(z+dz,t)$} (4.4,3);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:95: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.95 \draw[->]
+               (3.2,3) -- node[above] {$i(z+dz,t)$} (4.4,3);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:95: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.95 \draw[->]
+               (3.2,3) -- node[above] {$i(z+dz,t)$} (4.4,3);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:95: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.95 \draw[->]
+               (3.2,3) -- node[above] {$i(z+dz,t)$} (4.4,3);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:95: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.95 \draw[->]
+               (3.2,3) -- node[above] {$i(z+dz,t)$} (4.4,3);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:95: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.95 ....2,3) -- node[above] {$i(z+dz,t)$} (4.4,3)
+                                                  ;
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:95: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.95 ....2,3) -- node[above] {$i(z+dz,t)$} (4.4,3)
+                                                  ;
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:95: Package xcolor Error: Undefined color `\advance \par@deathcycles \@ne '.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.95 ....2,3) -- node[above] {$i(z+dz,t)$} (4.4,3)
+                                                  ;
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:95: Package xcolor Error: Undefined color `\advance \par@deathcycles \@ne '.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.95 ....2,3) -- node[above] {$i(z+dz,t)$} (4.4,3)
+                                                  ;
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:95: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.95 ....2,3) -- node[above] {$i(z+dz,t)$} (4.4,3)
+                                                  ;
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:95: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.95 ....2,3) -- node[above] {$i(z+dz,t)$} (4.4,3)
+                                                  ;
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:95: Package xcolor Error: Undefined color `\advance \par@deathcycles \@ne '.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.95 ....2,3) -- node[above] {$i(z+dz,t)$} (4.4,3)
+                                                  ;
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:95: Package xcolor Error: Undefined color `\advance \par@deathcycles \@ne '.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.95 ...2,3) -- node[above] {$i(z+dz,t)$} (4.4,3);
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:95: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.95 ...2,3) -- node[above] {$i(z+dz,t)$} (4.4,3);
+                                                  
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:95: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.95 ...2,3) -- node[above] {$i(z+dz,t)$} (4.4,3);
+                                                  
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:95: Package xcolor Error: Undefined color `\advance \par@deathcycles \@ne '.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.95 ...2,3) -- node[above] {$i(z+dz,t)$} (4.4,3);
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:96: Argument of \language@active@arg> has an extra }.
+<inserted text> 
+                \par 
+l.96 \draw[->]
+               (-4.2, 1.2) -- node[left] {$v(z,t)$} (-4.2,2.7);
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:96: Paragraph ended before \language@active@arg> was complete.
+<to be read again> 
+                   \par 
+l.96 \draw[->]
+               (-4.2, 1.2) -- node[left] {$v(z,t)$} (-4.2,2.7);
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:96: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.96 \draw[->]
+               (-4.2, 1.2) -- node[left] {$v(z,t)$} (-4.2,2.7);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:96: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.96 \draw[->]
+               (-4.2, 1.2) -- node[left] {$v(z,t)$} (-4.2,2.7);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:96: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.96 \draw[->]
+               (-4.2, 1.2) -- node[left] {$v(z,t)$} (-4.2,2.7);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:96: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.96 \draw[->]
+               (-4.2, 1.2) -- node[left] {$v(z,t)$} (-4.2,2.7);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:96: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.96 \draw[->]
+               (-4.2, 1.2) -- node[left] {$v(z,t)$} (-4.2,2.7);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:96: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.96 \draw[->]
+               (-4.2, 1.2) -- node[left] {$v(z,t)$} (-4.2,2.7);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:96: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.96 \draw[->]
+               (-4.2, 1.2) -- node[left] {$v(z,t)$} (-4.2,2.7);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:96: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.96 \draw[->]
+               (-4.2, 1.2) -- node[left] {$v(z,t)$} (-4.2,2.7);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:96: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.96 \draw[->]
+               (-4.2, 1.2) -- node[left] {$v(z,t)$} (-4.2,2.7);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:96: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.96 \draw[->]
+               (-4.2, 1.2) -- node[left] {$v(z,t)$} (-4.2,2.7);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:96: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.96 \draw[->]
+               (-4.2, 1.2) -- node[left] {$v(z,t)$} (-4.2,2.7);
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:96: Missing \endcsname inserted.
+<to be read again> 
+                   \advance 
+l.96 \draw[->]
+               (-4.2, 1.2) -- node[left] {$v(z,t)$} (-4.2,2.7);
+(That makes 100 errors; please try again.) 
+Here is how much of TeX's memory you used:
+ 41901 strings out of 478927
+ 1047844 string characters out of 2849654
+ 1563636 words of memory out of 3000000
+ 59118 multiletter control sequences out of 15000+600000
+ 411376 words of font info for 56 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 108i,6n,108p,635b,1049s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+c:/Users/Jero Bercic/Desktop/Jero/Informe/Waveguide.tex:96:  ==> Fatal error occurred, no output PDF file produced!
