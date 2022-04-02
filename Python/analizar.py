@@ -48,62 +48,69 @@ def fit_sin(tt, yy):
 #    return [z[args], v[args]]
 
 
-data2 = np.genfromtxt('sistema_sin_terminal.csv', delimiter=' ')
-data3 = np.genfromtxt('sistema_adaptado2.csv', delimiter=' ')
-z2, v2, s2 = data2[:,0], data2[:, 1], data2[:, 3]
-z3, v3, s3 = data3[:,0], data3[:, 1], data3[:, 3]
+data2 = np.genfromtxt('cortocircuito_calib.csv', delimiter=' ')
+#data3 = np.genfromtxt('sistema_adaptado2.csv', delimiter=' ')
+#z2, v2, s2 = data2[:,0], data2[:, 1], data2[:, 3]
+x, v = data2[:,0], data2[:, 1]
+#z3, v3, s3 = data3[:,0], data3[:, 1], data3[:, 3]
 #z3, v3 = sort_arrays(data3[:,0], data3[:, 1])
 
-z2 = z2 + 0.5958336695473103-0.055836036880428416-0.5706994355396638
+v = v*1000
+x = x + 0.5958336695473103-0.055836036880428416-0.5706994355396638
 
-plt.plot(z2, s2)
-plt.plot(z3, s3)
-plt.show()
+#plt.plot(z2, s2)
+#plt.plot(z3, s3)
+#plt.show()
 
-params = fit_sin(z2, v2)
+params = fit_sin(x, v)  #Fitea la curva de V(x)
+
 print(params)
-z0 = np.linspace(-1, 19, 10000)
+x0 = np.linspace(-1, 19, 10000)
 #z0 = z2
 
 
 vmax = (params["offset"]+params["amp"])
 vmin = (params["offset"]-params["amp"])
-lg = 2/params["freq"]
 
-delta = (params["phase"]/params["omega"])
+lg = 2/params["freq"] #Longitud de onda en la guía
+
+delta = (params["phase"]/params["omega"]) #Desviación respecto al plano de carga
 
 print(f"vmax: {vmax*1e3} \nvmin: {vmin*1e3} \nlambda: {lg} \ndelta: {delta} \ndelta/lg = {delta/lg}")
 
 roe = vmax/vmin
-gamma_abs = (roe-1)/(roe+1)
 
-Zv = 376.73
-co = 299792458*100
-f = 10.53e9
+Zv = 376.73        #Impedancia intrínseca del espacio libre
+co = 299792458*100 #Velocidad de la luz en cm/s
+f = 10.53e9        #Frecuencia de emisión del diodo Gunn
 Zo = Zv/co*f*lg
 
 print(f"roe: {roe} \nZo = {Zo}")
 
 mod_gamma = (roe - 1)/(roe + 1)
 fase_gamma = -params["phase"]+np.pi
-gamma = mod_gamma * np.exp(1j*fase_gamma)
+gamma = mod_gamma * np.exp(1j*fase_gamma)  #Coeficiente de reflexión
 
 zl = (1+gamma)/(1-gamma)
 Zl = zl*Zo
 
 print(f"coef reflexion: {gamma} = {mod_gamma}*exp({fase_gamma}j) \nzL = {zl} = {np.abs(zl)}*exp({np.angle(zl)}j)")
 
-
-
-x = -params["amp"]*np.cos(params["omega"]*z0-params["phase"])+params["offset"]
-plt.plot(z2, v2, z0, x, 'b:', z0, x*0+params["offset"], '--k')
-plt.plot(z3, v3)
+v_fit = -params["amp"]*np.cos(params["omega"]*x0-params["phase"])+params["offset"]
+plt.plot(x, v)
+plt.plot(x0, v_fit, 'b:')
+plt.xlim([min(x0), max(x0)])
+#plt.plot(z3, v3)
 plt.plot([0, 0], [0, vmax], 'k', [delta, delta], [0, vmax], '--k')
+plt.xlabel("x [cm]")
+plt.ylabel("V [mV]")
+plt.legend(["Señal Medida", "Proyección", "Plano de Carga"], loc='lower left')
 plt.gca().invert_xaxis()
+plt.tight_layout()
 plt.show()
 
-zg = (Zl+1j*Zo*np.tan(2*np.pi*z0/lg))/(Zo+1j*Zl*np.tan(2*np.pi*z0/lg))
-zg = np.divide(1+gamma*np.exp(-1j*params["omega"]*z0), 1-gamma*np.exp(-1j*params["omega"]*z0))
+zg = (Zl+1j*Zo*np.tan(2*np.pi*x0/lg))/(Zo+1j*Zl*np.tan(2*np.pi*x0/lg))
+zg = np.divide(1+gamma*np.exp(-1j*params["omega"]*x0), 1-gamma*np.exp(-1j*params["omega"]*x0))
 yg = 1./zg
 
 
@@ -112,17 +119,17 @@ fig, axs = plt.subplots(2,1)
 rg, xg = np.real(zg), np.imag(zg)
 gg, bg = np.real(yg), np.imag(yg)
 
-indexC = np.nonzero([z if 0.99 < np.real(y) < 1.01 and np.imag(y) < 0 else 0 for z, y in zip(z0, yg)])[0][0]
-indexL = np.nonzero([z if 0.99 < np.real(y) < 1.01 and np.imag(y) > 0 else 0 for z, y in zip(z0, yg)])[0][0]
-z_C = z0[indexC]
+indexC = np.nonzero([z if 0.99 < np.real(y) < 1.01 and np.imag(y) < 0 else 0 for z, y in zip(x0, yg)])[0][0]
+indexL = np.nonzero([z if 0.99 < np.real(y) < 1.01 and np.imag(y) > 0 else 0 for z, y in zip(x0, yg)])[0][0]
+z_C = x0[indexC]
 y_C = np.conj(yg[indexC])
-z_L = z0[indexL]
+z_L = x0[indexL]
 y_L = np.conj(yg[indexL])
 
-axs[0].plot(z0, np.real(zg), z0, np.imag(zg), 'b', z0, z0*0+1, '--k')
+axs[0].plot(x0, np.real(zg), x0, np.imag(zg), 'b', x0, x0*0+1, '--k')
 axs[0].plot([0, 0], [min(xg), max(rg)], 'k')
 
-axs[1].plot(z0, np.real(yg), z0, np.imag(yg), 'b', z0, z0*0+1, '--k')
+axs[1].plot(x0, np.real(yg), x0, np.imag(yg), 'b', x0, x0*0+1, '--k')
 axs[1].plot([0, 0], [min(bg), max(gg)], 'k')
 
 for i in range(10):

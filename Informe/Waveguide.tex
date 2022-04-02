@@ -99,14 +99,19 @@ Para poder caracterizar la guía de ondas, se puede pensar en ella como una lín
 \textbf{Figura 3}: Esquema del modelo de los cuadripolos a disponer en cascada.
 \end{center}
 Al igual que una línea de transmisión, las guías de ondas cuentan con una impedancia característica $Z_0$, la cual se puede calcular sabiendo la frecuencia $f$ a la que se propaga la onda, de la siguiente forma
-\begin{equation}
+
+\begin{equation}\label{eq:z_0}
     Z_0=\frac{Z_\text{vacío}}{\lambda_\text{vacío}}=Z_\text{vacío}\frac{f}{c}
 \end{equation}
-Donde $Z_\text{vacío}$ es la impedancia característica del vacío, igual a $376.6$ $\Omega$, $\lambda_\text{vacío}$ es la longitud de la onda propagada si ésta se propagase en el vacío, y $c$ es la velocidad de la luz.\\ \\
+
+Donde $Z_\text{vacío}$ es la impedancia característica del vacío, igual a $376.6$ $\Omega$, $\lambda_\text{vacío}$ es la longitud de la onda propagada si ésta se propagase en el vacío, y $c$ es la velocidad de la luz.\\
+
 Sabiendo la impedancia característica de la guía de ondas, se puede adaptar a la impedancia del plano de carga $Z_\text{L}$, y así poder aprovechar de manera más eficiente la energía transmitida. Éste será el caso si $Z_0$ es igual a $Z_\text{L}$. Para saber si la guía está adaptada se utiliza el \textbf{coeficiente de reflexión} $\Gamma$,
-\begin{equation}
+
+\begin{equation}\label{eq:gamma}
     \Gamma = \frac{Z_\text{L}-Z_0}{Z_\text{L}+Z_0}
 \end{equation}
+
 el cual vale $\Gamma = -1$ para un corto circuito, $\Gamma = 1$ para un circuito abierto, y $\Gamma = 0$ para la guía adaptada. \\ \\ 
 Otra forma de verificar si la guía está adaptada, es analizando la onda estacionaria que se forma debido a la reflexión de la onda en el plano de carga (Figura 4).
 %\begin{center}
@@ -114,15 +119,35 @@ Otra forma de verificar si la guía está adaptada, es analizando la onda estaci
 %    \textbf{Figura 4}: Onda estacionara formada en la guía debido a la reflexión en el plano de carga. 
 %\end{center}
 Para ello se define el ROE (razón de onda estacionaria) como
-\begin{equation}
+
+\begin{equation}\label{eq:ROE}
     \text{ROE} = \frac{1+\abs{\Gamma}}{1-\abs{\Gamma}}
 \end{equation}
+
 Este número también se puede calcular haciendo el cociente entre las amplitudes máxima y mínima de la onda estacionaria, y tiene un rango de 
 $$
 1<\text{ROE} < \infty
 $$
 Cuanto se quiere adaptar la guía, el ROE debe tender a 1. \\ \\
 En este laboratorio, se busca medir las propiedades de la onda estacionaria que se forma bajo distintas condiciones del plano de carga. Además, se busca adaptar la impedancia para ciertas condiciones. 
+
+\subsection{Adaptación de Impedancia}
+
+Suponer que se cuenta con una una línea de transmisión semi-infinita terminada con una impedancia de carga normalizada $z_L$.
+De la ecuación \ref{eq:gamma} se valida que la impedancia está adaptada en $Z_L = Z_0 \longrightarrow z_L = 1$.\\
+
+La impedancia de carga varía en función de la distancia al plano de carga según la expresión.\\
+
+\begin{equation*}
+    z(x) = \frac{Z_L + j Z_0\tan(kx)}{Z_0 + j Z_L\tan(kx)}
+\end{equation*}
+
+O bien su expresión equivalente
+\begin{equation*}
+    z(x) = \frac{1 + \Gamma e^{-j2kx}}{1 - \Gamma e^{-j2kx}}
+\end{equation*}
+
+
 \section{Método Experimental}
 
 Primero se determina la frecuencia de emisión del diodo emisor $f$, se construye una línea de transmisión con guía de onda rectangular conectando en cascada los siguientes elementos, ilustrada en la figura \ref{fig:arr1}
@@ -166,7 +191,8 @@ Se sigue el siguiente procedimiento para la adapatación de impedancia
 \begin{enumerate}
     \item Se mide la onda estacionaria con $Z_L$ en cortocircuito, referenciando el plano de carga a un mínimo de onda estacionaria.
     \item Se cambia $Z_L$ por una impedancia arbitraria y se mide la onda estacionaria. Se calculan la ROE y el desplazamiento del plano de carga.
-    \item Usando la ROE y el desplazamiento del plano de carga para calcular la posición del adaptado $\ell$ y su admitancia $y_a$. Estos cálculos se hacen con el diagrama de Smith y numéricamente con un script Python, validando el resultado.
+    \item Usando la ROE y el desplazamiento del plano de carga para calcular la posición del adaptado $\ell$ y su admitancia $y_a$. 
+    Estos cálculos se hacen con el diagrama de Smith\footnote{Apéndice 1} y numéricamente con un script Python\footnote{Apéndice 2}.
     \item Se ajusta la posición y admitancia del adaptador, se mide la onda estacionaria validando la disminución de la ROE ante impedancia adaptada.
 \end{enumerate}
 
@@ -183,7 +209,7 @@ Este método de adaptación de impedancia se usa para adaptar un sistema de comu
 
 El sistema se adapta con el siguiente procedimiento
 \begin{enumerate}
-    \item Se retira el módulo Rx y se mide la onda estacionaria, observando la ROE y validando que la antena de bocina adapta la impedancia de la guía a la impedancia del espacio libre.
+    \item Se retira el módulo Rx y se mide la ROE, validando que la antena de bocina adapta la impedancia de la guía a la impedancia del espacio libre.
     \item Se ubica el módulo Rx a 10 cm del módulo Tx. Se mide la ROE, observando el incremento de la misma respecto a la medición anterior.
     \item Se realiza el procesdimiento de adaptación de impedancia en presencia del módulo Rx.
 \end{enumerate}
