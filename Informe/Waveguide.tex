@@ -170,6 +170,26 @@ Se sigue el siguiente procedimiento para la adapatación de impedancia
     \item Se ajusta la posición y admitancia del adaptador, se mide la onda estacionaria validando la disminución de la ROE ante impedancia adaptada.
 \end{enumerate}
 
+Este método de adaptación de impedancia se usa para adaptar un sistema de comunicaciones transmisor-receptor, representado en la figura \ref{fig:sistema}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{Images/sistema.pdf}
+    \caption{Sistema transmisor-receptor.
+    \texttt{Tx:} línea de la figura \ref{fig:arr4} con antena de bocina en $Z_L$. 
+    \texttt{Rx:} detector de señal adaptado con una antena de bocina.}
+    \label{fig:sistema}
+\end{figure}
+
+El sistema se adapta con el siguiente procedimiento
+\begin{enumerate}
+    \item Se retira el módulo Rx y se mide la onda estacionaria, observando la ROE y validando que la antena de bocina adapta la impedancia de la guía a la impedancia del espacio libre.
+    \item Se ubica el módulo Rx a 10 cm del módulo Tx. Se mide la ROE, observando el incremento de la misma respecto a la medición anterior.
+    \item Se realiza el procesdimiento de adaptación de impedancia en presencia del módulo Rx.
+\end{enumerate}
+
+Se registra la intensidad de señal medida por Rx antes y después de adaptar impedancias, verificando la pérdida en potencia transmitida por impedancia desadaptada.
+
 \section{Resultados}
 
 
