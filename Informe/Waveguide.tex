@@ -69,15 +69,15 @@
 \begin{multicols}{2}
 \section{Introducción}
 Una guía de ondas electromagnéticas es un dispositivo que se utiliza para restringir la energía de una onda, y que ésta sea propagada en una dirección deseada. De esta manera se puede aprovechar dicha energía de manera más eficiente. Su utilidad es evidente, por ejemplo, en la fabricación de antenas, donde se busca que la propagación sea en una dirección específica y que las pérdidas de información sean mínimas. En la Figura 1 se muestra una guía de ondas electromagnéticas rectangular.
-\begin{center}
-    \includegraphics[scale=0.4]{images/Imagen1.jpg} \\
-    \textbf{Figura 1}. Guía de ondas electromagnéticas rectangular.
-\end{center}
+%\begin{center}
+%    \includegraphics[scale=0.4]{Images/Imagen1.jpg} \\
+%    \textbf{Figura 1}. Guía de ondas electromagnéticas rectangular.
+%\end{center}
 Dentro del contexto de éste tipo de guía de ondas, se encuentran los que se conocen como modos TE$_{mn}$ (Transverse Electric Field) y TM$_{mn}$ (Transverse Magnetic Field), que se refieren a si la onda transversal a la dirección de propagación es la eléctrica o la magnética, respectivamente, $m$ es el número de medias-ondas a lo largo de la guía, y $n$ es el número de medias-ondas a lo alto de la guía. En la Figura 2 se presenta un esquema de una guía de ondas cuyo modo es el TE$_{10}$.
-\begin{center}
-    \includegraphics[scale=0.15]{images/TE10.jpg} \\
-    \textbf{Figura 2}. Guía de ondas electromagnéticas con modo TE$_{10}$.
-\end{center}
+%\begin{center}
+%    \includegraphics[scale=0.15]{Images/TE10.jpg} \\
+%    \textbf{Figura 2}. Guía de ondas electromagnéticas con modo TE$_{10}$.
+%\end{center}
 El modo de propagación dependerá tanto de las dimensiones de la guía, así como de la frecuencia de la onda propagada. \\ \\
 Para poder caracterizar la guía de ondas, se puede pensar en ella como una línea de transmisión, o sea, una cascada de cuadripolos (Figura 3) distribuidos a lo largo de la línea.
 \begin{center}
@@ -109,10 +109,10 @@ Sabiendo la impedancia característica de la guía de ondas, se puede adaptar a 
 \end{equation}
 el cual vale $\Gamma = -1$ para un corto circuito, $\Gamma = 1$ para un circuito abierto, y $\Gamma = 0$ para la guía adaptada. \\ \\ 
 Otra forma de verificar si la guía está adaptada, es analizando la onda estacionaria que se forma debido a la reflexión de la onda en el plano de carga (Figura 4).
-\begin{center}
-    \includegraphics[scale=0.28]{images/Para el informe.jpg} \\
-    \textbf{Figura 4}: Onda estacionara formada en la guía debido a la reflexión en el plano de carga. 
-\end{center}
+%\begin{center}
+%    \includegraphics[scale=0.28]{Images/Para el informe.jpg} \\
+%    \textbf{Figura 4}: Onda estacionara formada en la guía debido a la reflexión en el plano de carga. 
+%\end{center}
 Para ello se define el ROE (razón de onda estacionaria) como
 \begin{equation}
     \text{ROE} = \frac{1+\abs{\Gamma}}{1-\abs{\Gamma}}
@@ -124,6 +124,51 @@ $$
 Cuanto se quiere adaptar la guía, el ROE debe tender a 1. \\ \\
 En este laboratorio, se busca medir las propiedades de la onda estacionaria que se forma bajo distintas condiciones del plano de carga. Además, se busca adaptar la impedancia para ciertas condiciones. 
 \section{Método Experimental}
+
+Primero se determina la frecuencia de emisión del diodo emisor $f$, se construye una línea de transmisión con guía de onda rectangular conectando en cascada los siguientes elementos, ilustrada en la figura \ref{fig:arr1}
+\begin{multicols}{2}
+    \begin{labeling}{III} 
+        \item [I] Emisor Diodo Gunn
+        \item [II] Aislador
+        \item [III] Atenuador 3 dB
+        \item [IV] Cavidad Resonante
+        \item [V] Antena Detectora
+        \item [VI] Cortocircuito Móvil
+    \end{labeling}        
+\end{multicols}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{Images/arreglo1.pdf}
+    \caption{Línea de transmisión para medir frecuencia de emisión. La cavidad resonante actúa como filtro, absorbiendo su frecuencia de resonancia y dejando pasar otras frecuencias.}
+    \label{fig:arr1}
+\end{figure}
+Se ajusta el cortocircuito móvil hasta detectar un máximo de onda estacionaria con la antena detectora, y se procede a ajustar la frecuencia de resonancia de la cavidad hasta que esta coincida con la frecuencia de emisión del diodo Gunn.\\
+
+Conociendo la frecuencia de operación del emisor, se procede a caracterizar la longitud de onda dentro de la guía $\lambda_g$ y su impedancia intrínseca $Z_0$. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{Images/arreglo2.pdf}
+    \caption{Linea de transmisión para medir longitud de onda. La terminación en cortocircuito provoca una onda estacionaria en la guía, la onda estacionaria se mide con una antena detectora en una línea ranurada.}
+    \label{fig:arr2}
+\end{figure}
+
+Una vez conocidas $\lambda_g$ y $Z_0$ se pueden adaptar impedancias. Se costruye la línea de transmisión correspondiente a la figura \ref{fig:arr4}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{Images/arreglo4.pdf}
+    \caption{Sistema de adaptación de impedancias para una impedancia de carga $Z_L$, un tornillo capacitivo actúa como stub en paralelo.}
+    \label{fig:arr4}
+\end{figure}
+
+Se sigue el siguiente procedimiento para la adapatación de impedancia
+
+\begin{enumerate}
+    \item Se mide la onda estacionaria con $Z_L$ en cortocircuito, referenciando el plano de carga a un mínimo de onda estacionaria.
+    \item Se cambia $Z_L$ por una impedancia arbitraria y se mide la onda estacionaria. Se calculan la ROE y el desplazamiento del plano de carga.
+    \item Usando la ROE y el desplazamiento del plano de carga para calcular la posición del adaptado $\ell$ y su admitancia $y_a$. Estos cálculos se hacen con el diagrama de Smith y numéricamente con un script Python, validando el resultado.
+    \item Se ajusta la posición y admitancia del adaptador, se mide la onda estacionaria validando la disminución de la ROE ante impedancia adaptada.
+\end{enumerate}
 
 \section{Resultados}
 
