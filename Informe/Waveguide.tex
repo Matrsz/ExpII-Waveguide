@@ -136,17 +136,34 @@ En este laboratorio, se busca medir las propiedades de la onda estacionaria que 
 Suponer que se cuenta con una una línea de transmisión semi-infinita terminada con una impedancia de carga normalizada $z_L$.
 De la ecuación \ref{eq:gamma} se valida que la impedancia está adaptada en $Z_L = Z_0 \longrightarrow z_L = 1$.\\
 
-La impedancia de carga varía en función de la distancia al plano de carga según la expresión.\\
-
-\begin{equation*}
-    z(x) = \frac{Z_L + j Z_0\tan(kx)}{Z_0 + j Z_L\tan(kx)}
-\end{equation*}
-
-O bien su expresión equivalente
+La impedancia de carga varía en función de la distancia desde plano de carga hacia el generador $x$ según la expresión
 \begin{equation*}
     z(x) = \frac{1 + \Gamma e^{-j2kx}}{1 - \Gamma e^{-j2kx}}
 \end{equation*}
 
+Es equivalente trabajar con la admitancia normalizada
+\begin{equation*}
+    y(x) = \frac{1}{z(x)} = \frac{1 - \Gamma e^{-j2kx}}{1 + \Gamma e^{-j2kx}}
+\end{equation*}
+
+La expresión de la admitancia normalizada permite calcular la admitancia de carga de dos guías en paralelo
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{Images/guiapll.pdf}
+    \caption{Paralelo de dos guías de onda, la admitancia de entrada del paralelo cumple $y_\parallel = y_1+y_2$.}
+    \label{fig:pll}
+\end{figure}
+
+El método de adaptación de impedancia con stub en paralelo consiste en. 
+\begin{enumerate}
+    \item Encontrar en la guía un punto $x = \ell$ tal que la resistencia en $\ell$ esté normalizada: $y_1(\ell)=1+jb$.
+    \item Colocar en $x=\ell$ una admitancia en paralelo puramente reactiva, de valor $y_a = -jb$.
+\end{enumerate}
+
+De esta forma se genera a la entrada del paralelo un nuevo plano de carga con admitancia adaptada 
+$$y_L' = y(\ell) + y_a = 1$$
+
+Métodos para encontrar los valores de $\ell$ y $y_a$ se pueden hacer de forma analítica, numérica, o usando el diagrama de Smith.
 
 \section{Método Experimental}
 
