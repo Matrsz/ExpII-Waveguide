@@ -50,20 +50,29 @@ def fit_sin(tt, yy):
 
 
 data2 = np.genfromtxt('sistema_desadaptado.csv', delimiter=' ')
-#data3 = np.genfromtxt('sistema_adaptado.csv', delimiter=' ')
+data3 = np.genfromtxt('sistema_adaptado2.csv', delimiter=' ')
 #z2, v2, s2 = data2[:,0], data2[:, 1], data2[:, 3]
-x, v = data2[:,0], data2[:, 1]
-#x2, v2 = data3[:,0], data3[:, 1]
+x, v, s = data2[:,0], data2[:, 1], data2[:, 3]
+x2, v2, s2 = data3[:,0], data3[:, 1], data3[:, 3]
 #z3, v3 = sort_arrays(data3[:,0], data3[:, 1])
 
 v = v*1000
+v2 = v2*1000
 x = x + 0.5958336695473103-0.055836036880428416-0.5706994355396638
 
-#plt.plot(z2, s2)
-#plt.plot(z3, s3)
-#plt.show()
+plt.plot(x, s)
+plt.plot(x2, s2)
+plt.title("Señal Transmitida a Receptor")
+plt.ylim([0, max(s2)*1.1])
+plt.legend(["ZL Desadaptada", "ZL Adaptada"])
+plt.ylabel("V [mV]")
+plt.xlim([max(min(x), min(x2)), min(max(x), max(x2))])
+plt.gca().set_xticklabels([])
+plt.grid()
+plt.show()
 
 params = fit_sin(x, v)  #Fitea la curva de V(x)
+params2 = fit_sin(x2, v2)
 
 print(params)
 x0 = np.linspace(-1, 19, 10000)
@@ -97,17 +106,21 @@ Zl = zl*Zo
 
 print(f"coef reflexion: {gamma} = {mod_gamma}*exp({fase_gamma}j) \nzL = {zl} = {np.abs(zl)}*exp({np.angle(zl)}j)")
 
+v_fit2 = -params2["amp"]*np.cos(params2["omega"]*x0-params2["phase"])+params2["offset"]
+
 v_fit = -params["amp"]*np.cos(params["omega"]*x0-params["phase"])+params["offset"]
 
 plt.plot(x, v)
+plt.plot(x2, v2)
 plt.plot(x0, v_fit, 'b:')
+plt.plot(x0, v_fit2, 'r:')
 plt.xlim([min(x0), max(x0)])
 #plt.plot(z3, v3)
 plt.plot([0, 0], [0, vmax], 'k', [delta, delta], [0, vmax], '--k')
 plt.xlabel("x [cm]")
 plt.ylabel("V [mV]")
 plt.title("Antena de Bocina + Receptor")
-plt.legend(["Señal Medida", "Proyección", "Plano de Carga"], loc='lower left')
+plt.legend(["ZL Desadaptada", "ZL Adaptada"], loc='lower left')
 plt.gca().invert_xaxis()
 plt.tight_layout()
 plt.show()
