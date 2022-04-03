@@ -1,0 +1,332 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[left=1.2cm,right=1.2cm,top=2cm,bottom=2cm]{geometry}
+\date{\small{\today}}
+\usepackage{fancyhdr}
+\usepackage{afterpage}
+\usepackage{titlesec}
+\usepackage{float}
+\usepackage{gensymb}
+\usepackage{xfrac}
+\usepackage{tabularx}
+\usepackage{multicol}
+\usepackage[font=small]{caption}
+\usepackage{scrextend}
+\usepackage[toc,page]{appendix}
+\usepackage{tikz}
+\usepackage{tkz-euclide}
+\usepackage[siunitx,americanvoltages,fulldiodes]{circuitikz}
+\usepackage{stackengine}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+\usetikzlibrary{arrows}
+\usepackage{caption}
+
+\renewcommand\appendixpagename{Apéndices}
+\renewcommand\appendixname{Apéndice}
+
+\DeclareMathOperator{\arctantwo}{arctan2}
+
+\titleformat{\section}{\Large\bfseries}{}{0em}{}[]
+\titleformat{\subsection}{\large\bfseries}{}{0em}{}[]
+\titleformat{\subsubsection}{\bfseries}{}{0em}{}[]
+\titleformat{\chapter}{\large\bfseries}{}{0em}{}[]
+
+
+\setlength\parindent{0pt}
+
+
+\begin{document}
+\title{Adaptación de Impedancia en Guía de Onda Rectangular}
+	\LARGE{\textsc{Laboratorio II}}\\
+	\Large{Adaptación de Impedancia en Guía de Onda Rectangular}\\
+\begin{large}
+\small\textsc{Bercic, Jerónimo}\\
+\small\textsc{Roqueta, Matías Daniel}\\
+\small{Instituto Balseiro, Centro Atómico Bariloche, Comisión Nacional de Energía Atómica}\\
+\end{large}
+\setcounter{page}{1}
+
+\lhead{Laboratorio II}%Materia
+\rhead{Adaptación de Impedancia en Guía de Onda Rectangular}%Título 
+\chead{}
+
+\lfoot{J. Bercic, M. Roqueta}
+\cfoot{Instituto Balseiro} 
+\rfoot{\thepage} 
+\renewcommand{\headrulewidth}{0.4pt} 
+\renewcommand{\footrulewidth}{0.4pt} 
+\pagestyle{fancy}
+
+\hrule
+\normalsize
+\section{Resumen}
+
+\begin{multicols}{2}
+\section{Introducción}
+Una guía de ondas electromagnéticas es un dispositivo que se utiliza para restringir la energía de una onda, y que ésta sea propagada en una dirección deseada. De esta manera se puede aprovechar dicha energía de manera más eficiente. Su utilidad es evidente, por ejemplo, en la fabricación de antenas, donde se busca que la propagación sea en una dirección específica y que las pérdidas de información sean mínimas. En la Figura \ref{fig:guia} se muestra una guía de ondas electromagnéticas rectangular.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{Images/Imagen1.jpg}
+    \caption{Guía de ondas electromagnéticas rectangular.}
+    \label{fig:guia}
+\end{figure}
+Dentro del contexto de éste tipo de guía de ondas, se encuentran los que se conocen como modos TE$_{mn}$ (Transverse Electric Field) y TM$_{mn}$ (Transverse Magnetic Field), que se refieren a si la onda transversal a la dirección de propagación es la eléctrica o la magnética, respectivamente, $m$ es el número de medias-ondas a lo largo de la guía, y $n$ es el número de medias-ondas a lo alto de la guía. En la Figura \ref{fig:te10} se presenta un esquema de una guía de ondas cuyo modo es el TE$_{10}$.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.15]{Images/TE10.jpg}
+    \caption{Guía de ondas electromagnéticas con modo TE$_{10}$.}
+    \label{fig:te10}
+\end{figure}
+El modo de propagación dependerá tanto de las dimensiones de la guía, así como de la frecuencia de la onda propagada. \\ \\
+Para poder caracterizar la guía de ondas, se puede pensar en ella como una línea de transmisión, o sea, una cascada de cuadripolos (Figura \ref{fig:cuadri}) distribuidos a lo largo de la línea.
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.75]
+\draw (1,3) to [L, l_=$L\:dz$] (-2,3);
+\draw (1,3) to [C, l_=$C$] (1,1);
+\draw[ultra thin, fill=pink,fill opacity=0.15] (-3,0.25) rectangle (2,3.8);
+\draw[->] (-2,1) -- (3,1);
+\draw[->] (-2,3) -- (3,3);
+\draw (-4,1) -- (-2,1);
+\draw (-4,3) -- (-2,3);
+\draw (-2,3) -- (-2,1);
+\node at (-7,1) { };
+\draw[->] (-5.5,3) -- node[above] {$i(z,t)$} (-4.2,3);
+\draw[->] (3.2,3) -- node[above] {$i(z+dz,t)$} (4.4,3);
+\draw[->] (-4.2, 1.2) -- node[left] {$v(z,t)$} (-4.2,2.7);
+\draw[->] (3.2, 1.2) -- node[right] {$v(z+dz,t)$} (3.2,2.7);
+\end{tikzpicture}
+\caption{Cuadripolo a disponer en cascada, que caracteriza a una línea de transmisión.}\label{fig:cuadri}
+\end{figure}
+
+
+
+Al igual que una línea de transmisión, las guías de ondas cuentan con una impedancia característica $Z_0$, la cual se puede calcular sabiendo la frecuencia $f$ a la que se propaga la onda, de la siguiente forma
+\begin{equation}
+    Z_0=\frac{Z_\text{vacío}}{\lambda_\text{vacío}}=Z_\text{vacío}\frac{f}{c}
+\end{equation}
+Donde $Z_\text{vacío}$ es la impedancia característica del vacío, igual a $376.6$ $\Omega$, $\lambda_\text{vacío}$ es la longitud de la onda propagada si ésta se propagase en el vacío, y $c$ es la velocidad de la luz.\\ \\
+Sabiendo la impedancia característica de la guía de ondas, se puede adaptar a la impedancia del plano de carga $Z_\text{L}$, y así poder aprovechar de manera más eficiente la energía transmitida. Éste será el caso si $Z_0$ es igual a $Z_\text{L}$. Para saber si la guía está adaptada se utiliza el \textbf{coeficiente de reflexión} $\Gamma$,
+\begin{equation}\label{eq:gamma}
+    \Gamma = \frac{Z_\text{L}-Z_0}{Z_\text{L}+Z_0}
+\end{equation}
+el cual vale $\Gamma = -1$ para un corto circuito, $\Gamma = 1$ para un circuito abierto, y $\Gamma = 0$ para la guía adaptada. \\ \\ 
+Otra forma de verificar si la guía está adaptada, es analizando la onda estacionaria que se forma debido a la reflexión de la onda en el plano de carga (Figura 4).
+\begin{center}
+    \includegraphics[scale=0.28]{Images/Para el informe.jpg} \\
+    \textbf{Figura 4}: Onda estacionara formada en la guía debido a la reflexión en el plano de carga. 
+\end{center}
+Para ello se define el ROE (razón de onda estacionaria) como
+\begin{equation}
+    \text{ROE} = \frac{1+\abs{\Gamma}}{1-\abs{\Gamma}}
+\end{equation}
+Este número también se puede calcular haciendo el cociente entre las amplitudes máxima y mínima de la onda estacionaria, y tiene un rango de 
+$$
+1<\text{ROE} < \infty
+$$
+Cuanto se quiere adaptar la guía, el ROE debe tender a 1. \\ \\
+En este laboratorio, se busca medir las propiedades de la onda estacionaria que se forma bajo distintas condiciones del plano de carga. Además, se busca adaptar la impedancia para ciertas condiciones. 
+\subsection{Adaptación de Impedancia}
+
+Suponer que se cuenta con una una línea de transmisión semi-infinita terminada con una impedancia de carga normalizada $z_L$.
+De la ecuación \ref{eq:gamma} se valida que la impedancia está adaptada en $Z_L = Z_0 \longrightarrow z_L = 1$.\\
+
+La impedancia de carga varía en función de la distancia al plano de carga según la expresión.\\
+
+\begin{equation*}
+    z(x) = \frac{Z_L + j Z_0\tan(kx)}{Z_0 + j Z_L\tan(kx)}
+\end{equation*}
+
+O bien su expresión equivalente
+\begin{equation*}
+    z(x) = \frac{1 + \Gamma e^{-j2kx}}{1 - \Gamma e^{-j2kx}}
+\end{equation*}
+donde $k=\frac{2\pi}{\lambda_g}$ es el número de onda, y $j=\sqrt{-1}$. \\ \\Es equivalente trabajar con la admitancia normalizada
+\begin{equation*}
+    y(x) = \frac{1}{z(x)} = \frac{1 - \Gamma e^{-j2kx}}{1 + \Gamma e^{-j2kx}}
+\end{equation*}
+
+La expresión de la admitancia normalizada permite calcular la admitancia de carga de dos guías en paralelo
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{Images/guiapll.pdf}
+    \caption{Paralelo de dos guías de onda, la admitancia de entrada del paralelo cumple $y_\parallel = y_1+y_2$.}
+    \label{fig:pll}
+\end{figure}
+
+El método de adaptación de impedancia con stub en paralelo consiste en. 
+\begin{enumerate}
+    \item Encontrar en la guía un punto $x = \ell$ tal que la resistencia en $\ell$ esté normalizada: $y_1(\ell)=1+jb$.
+    \item Colocar en $x=\ell$ una admitancia en paralelo puramente reactiva, de valor $y_a = -jb$.
+\end{enumerate}
+
+De esta forma se genera a la entrada del paralelo un nuevo plano de carga con admitancia adaptada 
+$$y_L' = y(\ell) + y_a = 1$$
+
+Métodos para encontrar los valores de $\ell$ y $y_a$ se pueden hacer de forma analítica, numérica, o usando el diagrama de Smith.
+
+
+\section{Método Experimental}
+
+Primero se determina la frecuencia de emisión del diodo emisor $f$, se construye una línea de transmisión con guía de onda rectangular conectando en cascada los siguientes elementos, ilustrada en la figura \ref{fig:arr1}
+\begin{multicols}{2}
+    \begin{labeling}{III} 
+        \item [I] Emisor Diodo Gunn
+        \item [II] Aislador
+        \item [III] Atenuador 3 dB
+        \item [IV] Cavidad Resonante
+        \item [V] Antena Detectora
+        \item [VI] Cortocircuito Móvil
+    \end{labeling}        
+\end{multicols}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{Images/arreglo1.pdf}
+    \caption{Línea de transmisión para medir frecuencia de emisión. La cavidad resonante actúa como filtro, absorbiendo su frecuencia de resonancia y dejando pasar otras frecuencias.}
+    \label{fig:arr1}
+\end{figure}
+Se ajusta el cortocircuito móvil hasta detectar un máximo de onda estacionaria con la antena detectora, y se procede a ajustar la frecuencia de resonancia de la cavidad hasta que esta coincida con la frecuencia de emisión del diodo Gunn.\\
+
+Conociendo la frecuencia de operación del emisor, se procede a caracterizar la longitud de onda $\lambda_g$ dentro de la guía y su impedancia característica. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{Images/arreglo2.pdf}
+    \caption{Linea de transmisión para medir longitud de onda. La terminación en cortocircuito provoca una onda estacionaria en la guía, la onda estacionaria se mide con una antena detectora en una línea ranurada.}
+    \label{fig:arr2}
+\end{figure}
+
+Una vez conocidas $\lambda_g$ y $Z_0$, se puede proceder a adaptar impedancias. Se costruye la línea de transmisión correspondiente a la Figura \ref{fig:arr4}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{Images/arreglo4.pdf}
+    \caption{Sistema de adaptación de impedancias para una impedancia de carga $Z_L$, un tornillo capacitivo actúa como stub en paralelo.}
+    \label{fig:arr4}
+\end{figure}
+
+Se sigue el siguiente procedimiento para la adapatación de impedancia
+
+\begin{enumerate}
+    \item Se mide la onda estacionaria con $Z_L$ en cortocircuito, referenciando el plano de carga a un mínimo de onda estacionaria.
+    \item Se cambia $Z_L$ por una impedancia arbitraria y se mide la onda estacionaria. Se calculan la ROE y el desplazamiento $\delta$ del plano de carga.
+    \item Usando la ROE y el desplazamiento del plano de carga para calcular la posición del adaptado $\ell$ y su admitancia $y_a$. 
+    Estos cálculos se hacen con el diagrama de Smith\footnote{Apéndice 1} y numéricamente con un script Python\footnote{Apéndice 2}.
+    \item Se ajusta la posición y admitancia del adaptador, se mide la onda estacionaria validando la disminución de la ROE ante impedancia adaptada.
+\end{enumerate}
+
+Este método de adaptación de impedancia se usa para adaptar un sistema de comunicaciones transmisor-receptor, representado en la figura \ref{fig:sistema}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{Images/sistema.pdf}
+    \caption{Sistema transmisor-receptor.
+    \texttt{Tx:} línea de la figura \ref{fig:arr4} con antena de bocina en $Z_L$. 
+    \texttt{Rx:} detector de señal adaptado con una antena de bocina.}
+    \label{fig:sistema}
+\end{figure}
+
+El sistema se adapta con el siguiente procedimiento
+\begin{enumerate}
+    \item Se retira el módulo Rx y se mide la ROE, validando que la antena de bocina adapta la impedancia de la guía a la impedancia del espacio libre.
+    \item Se ubica el módulo Rx a 10 cm del módulo Tx. Se mide la ROE, observando el incremento de la misma respecto a la medición anterior.
+    \item Se realiza el procesdimiento de adaptación de impedancia en presencia del módulo Rx.
+\end{enumerate}
+
+Se registra la intensidad de señal medida por Rx ant
+
+\section{Resultados}
+Para la frecuencia de trabajo de la fuente, se obtuvo un valor de 
+$$
+f = (10.53 \pm 0.05) \text{ GHz}
+$$
+que es indistinguible con el valor provisto por el fabricante $f_\text{f}$, que corresponde a $f_\text{f}=10.5$ GHz. \\ \\
+La longitud de onda resultó en
+$$
+\lambda_\text{g} = (3.97 \pm ?) \text{ cm} 
+$$
+Y la impedancia característica, de la ecuación (1),
+$$
+Z_0 = (525.6 \pm ?) \text{ } \Omega
+$$
+Para el caso de la guía expuesta al aire, se muestra el perfil de la onda en la Figura x. \\ \\ 
+aca va el grafico \\ \\
+El ROE para este caso resultó en
+$$
+\text{ROE} = 2.71
+$$
+además se obtuvo un $\delta$ de
+$$
+\delta = 0.14 \lambda_\text{g}
+$$
+Para la placa de cobre en el plano de carga, se muestra la onda en la Figura x, \\ \\
+figura x \\ \\
+El ROE en este caso se determinó como
+$$
+\text{ROE} = 1871 
+$$
+y un $\delta$ de 
+$$
+\delta = ?
+$$
+\subsection{Adaptación de Impedancia con la antena detectora}
+Se determinó que el ROE para este caso es
+$$
+ROE = ?
+$$
+y que el $\delta$ es de
+$$
+\delta = ?
+$$
+Con estos datos, utilizando el diagrama de Smith se pudo ver que la admitancia del adaptador es de
+$$
+y_a = ?
+$$
+y que la distancia del plano de carga al adaptador es
+$$
+l = ?
+$$
+Por último, se tuvo que fijar con qué profundidad habia que insertar el adaptador en la guía de onda,
+$$
+s = ?
+$$
+Se presenta en la figura x, el perfil de la onda desadaptada en contraste con el perfil de la onda adaptada,
+\\ \\
+fig 
+\\ \\
+Y, en la Figura x, se grafica el voltaje medido por la antena con la guía desadaptada, y el voltaje medido por la guía adaptada.
+\\ \\
+fig
+\\ \\
+\section{Discusión}
+Se ve que el ROE para el caso de la placa de cobre en el plano de carga es tres ordenes de magnitud mayor que el ROE para el caso del aire. Esto se debe a que el caso de la placa de metal, asemeja un corto circuito, por lo tanto hay mayor reflexión para el caso del aire, que asemeja un circuito abierto. \\ \\
+También se ve que, el ROE de valor más bajo fue para el caso de la corneta. Esto se debe a que, por la forma que tiene ésta, la onda se ve disipada al salir de la guía, similar a una placa acústica, y por eso la corneta es el caso mejor adaptado de los tres. \\ \\
+Se observa además, que el ROE de la onda cuando la antena receptora se encuentra a continuación del plano de carga, es mayor que el ROE de la onda cuando ésta no se encuentra colocada. Esto quiere decir, que el hecho de colocar la antena produce una reflexión de la señal, y esta se ve reflejada dentro de la guía. \\ \\
+Se puede notar que, luego de la adaptación de la guía con la antena detectora colocada, una disminución en el ROE, indicando que la adaptación fue exitosa. Además, el voltaje medido por la antena, se ve incrementado luego de la adaptación, o sea que mayor señal está siendo transmitida, como era de esperar.
+\section{Conclusiones}
+
+\bibliography{LockIn}
+\bibliographystyle{unsrt}
+
+\end{multicols}
+\newpage
+\begin{appendices}
+\vspace{-1em}
+\hrule
+\vspace{1em}
+\normalsize
+\section{Apéndice 1 -}
+\end{appendices}
+
+\begin{multicols}{2}
+
+\end{multicols}
+
+\end{document}
