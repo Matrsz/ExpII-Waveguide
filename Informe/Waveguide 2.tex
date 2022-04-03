@@ -28,6 +28,7 @@
 \DeclarePairedDelimiter\norm{\lVert}{\rVert}%
 \usetikzlibrary{arrows}
 \usepackage{caption}
+\usepackage{listings}
 
 \renewcommand\appendixpagename{Apéndices}
 \renewcommand\appendixname{Apéndice}
@@ -150,7 +151,7 @@ O bien su expresión equivalente
     z(x) = \frac{1 + \Gamma e^{-j2kx}}{1 - \Gamma e^{-j2kx}}
 \end{equation*}
 donde $k=\frac{2\pi}{\lambda_g}$ es el número de onda, y $j=\sqrt{-1}$. \\ \\Es equivalente trabajar con la admitancia normalizada
-\begin{equation*}
+\begin{equation*}\label{eq:y_normal}
     y(x) = \frac{1}{z(x)} = \frac{1 - \Gamma e^{-j2kx}}{1 + \Gamma e^{-j2kx}}
 \end{equation*}
 
@@ -318,7 +319,7 @@ Se observa además, que el ROE de la onda cuando la antena receptora se encuentr
 Se puede notar que, luego de la adaptación de la guía con la antena detectora colocada, una disminución en el ROE, indicando que la adaptación fue exitosa. Además, el voltaje medido por la antena, se ve incrementado luego de la adaptación, o sea que mayor señal está siendo transmitida, como era de esperar.
 \section{Conclusiones}
 
-\bibliography{LockIn}
+%\bibliography{LockIn}
 \bibliographystyle{unsrt}
 
 \end{multicols}
@@ -328,11 +329,73 @@ Se puede notar que, luego de la adaptación de la guía con la antena detectora 
 \hrule
 \vspace{1em}
 \normalsize
-\section{Apéndice 1 -}
-\end{appendices}
-
+\section{Apéndice 1 - Resolución Numérica con Python}
 \begin{multicols}{2}
+    Se registra un vector de mediciones experimentales de la onda estacionaria \texttt{[x, v]}, de estos datos se extraen
+
+    \begin{equation*}
+        \mathtt{vmax} = \mathtt{max(v)} \qquad \qquad \mathtt{vmin} = \mathtt{min(v)}
+    \end{equation*}\\[-1em]
+
+    Los datos se ajustan a la función \ref{eq:fit} que aproxima el perfil de la onda estacionaria, de carácter $\frac{\lambda_g}{2}$-periódico.
+
+    \begin{equation}\label{eq:fit}
+        \mathtt v = A_0 -A\cos(2k\mathtt x-\phi)
+    \end{equation}\\[-1em]
+
+    Donde $A$ y $A_0$ se calculan a partir de \texttt{vmax} y \texttt{vmin}, y $k = \frac{2\pi}{\lambda_g}$, dejando a $\phi$ como parámetro de ajuste.\\
+
+    A partir de estos datos se calculan la razón de onda estacionaria y el desplazamiento del plano de carga
+
+    \begin{equation*}
+        \mathrm{ROE} = \frac{\mathtt{vmax}}{\mathtt{vmin}}\qquad\qquad\delta = \frac{\phi}{2\pi}\,\frac{\lambda_g}{2}
+    \end{equation*}\\[-1em]
+
+    Notar que el valor de $\mathtt{x} = \delta$ es el que minimiza la función de ajuste \ref{eq:fit}. A continuación el procedimiento es equivalente al procedimiento gráfico realizado con el diagrama de Smith, presentado en el Apéndice 2.\\
+
+    A partir de la ROE y $\delta$, se calcula el coeficiente de reflexión $\Gamma = \left|\Gamma\right|e^{j\phi_\Gamma}$ a partir de su módulo y fase
+
+    \begin{equation*}
+        \left|\Gamma\right| = \frac{\mathrm{ROE}-1}{\mathrm{ROE}+1}\qquad\qquad \phi_\Gamma = \pi-2k\delta
+    \end{equation*}\\[-1em]
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\linewidth]{Images/ydex.pdf}
+        \caption{Gráfico superior: Conductancia normalizada y recta $g=1$, intersecciones con la recta $g=1$ son candidatos a adaptacion de impedancia.
+            Gráfico inferior: Suceptancia normalizada y recta $b=0$, suceptancias negativas son inductivas y suceptancias positivas son capacitivas.}
+        \label{fig:ydex}
+    \end{figure}
+    Teniendo el valor de $\Gamma$ se expresa la admitancia normalizada en función de la distancia al plano de carga a partir de la ecuación \ref{eq:y_normal}. La admitancia se grafica en su parte real e imaginaria y se presenta en la figura \ref{fig:ydex}\\
+
+    Se define un margen de tolerancia $\epsilon = 0.01$\footnote{Se define un márgen de tolerancia debido al error de discretización}, y se itera sobre los índices \texttt{i} de \texttt{y}, seleccionando aquellos que cumplen las siguientes condiciones
+
+    \begin{itemize}
+        \item La conductancia normalizada es igual a 1 dentro del margen de tolerancia
+        $$\mathtt{ 1-\epsilon \le np.real(y[i]) \le  1+\epsilon}$$
+        \item Debido a que el stub en paralelo es capacitivo, la suceptancia en la guía necesita ser inductiva
+        $$\mathtt{np.imag(y[i])< 0}$$
+    \end{itemize}
+
+    A partir de los índices \texttt{i} que cumplen estas dos condiciones simultaneamente se obtienen la posición $\ell$ del adaptador capacitivo y la admitancia de este $y_a$ 
+    
+    \begin{equation*}
+        \mathtt{\ell = x[i]\qquad\qquad y_a = - np.imag(y[i])}
+    \end{equation*}\\[-1em]
+
+    Se informan el valor de $y_a$ y los posibles valores que puede tomar $\ell$, estos además se grafican junto a la admitancia normalizada en la figura \ref{fig:ydex_l}\\
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\linewidth]{Images/ydex_l.pdf}
+        \caption{Gráfico \ref{fig:ydex} argegando en línea punteada vertical las posibles ubicaciones en la guía que puede tomar un adaptador de impedancias capacitivo.}
+        \label{fig:ydex_l}
+    \end{figure}
 
 \end{multicols}
+\pagebreak
+
+\end{appendices}
+
 
 \end{document}
