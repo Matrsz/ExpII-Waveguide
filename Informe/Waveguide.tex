@@ -23,8 +23,11 @@
 \usepackage[siunitx,americanvoltages,fulldiodes]{circuitikz}
 \usepackage{stackengine}
 \usepackage{mathtools}
+\usepackage{hyperref}
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}%
 \DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+\usetikzlibrary{arrows}
+\usepackage{caption}
 
 \renewcommand\appendixpagename{Apéndices}
 \renewcommand\appendixname{Apéndice}
@@ -68,16 +71,21 @@
 
 \begin{multicols}{2}
 \section{Introducción}
-Una guía de ondas electromagnéticas es un dispositivo que se utiliza para restringir la energía de una onda, y que ésta sea propagada en una dirección deseada. De esta manera se puede aprovechar dicha energía de manera más eficiente. Su utilidad es evidente, por ejemplo, en la fabricación de antenas, donde se busca que la propagación sea en una dirección específica y que las pérdidas de información sean mínimas. En la Figura 1 se muestra una guía de ondas electromagnéticas rectangular.
-%\begin{center}
-%    \includegraphics[scale=0.4]{Images/Imagen1.jpg} \\
-%    \textbf{Figura 1}. Guía de ondas electromagnéticas rectangular.
-%\end{center}
-Dentro del contexto de éste tipo de guía de ondas, se encuentran los que se conocen como modos TE$_{mn}$ (Transverse Electric Field) y TM$_{mn}$ (Transverse Magnetic Field), que se refieren a si la onda transversal a la dirección de propagación es la eléctrica o la magnética, respectivamente, $m$ es el número de medias-ondas a lo largo de la guía, y $n$ es el número de medias-ondas a lo alto de la guía. En la Figura 2 se presenta un esquema de una guía de ondas cuyo modo es el TE$_{10}$.
-%\begin{center}
-%    \includegraphics[scale=0.15]{Images/TE10.jpg} \\
-%    \textbf{Figura 2}. Guía de ondas electromagnéticas con modo TE$_{10}$.
-%\end{center}
+Una guía de ondas electromagnéticas es un dispositivo que se utiliza para restringir la energía de una onda, y que ésta sea propagada en una dirección deseada. De esta manera se puede aprovechar dicha energía de manera más eficiente. Su utilidad es evidente, por ejemplo, en la fabricación de antenas, donde se busca que la propagación sea en una dirección específica y que las pérdidas de información sean mínimas. En la Figura \ref{fig:guia} se muestra una guía de ondas electromagnéticas rectangular.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{Images/Imagen1.jpg}
+    \caption{Guía de ondas electromagnéticas rectangular.}
+    \label{fig:guia}
+\end{figure}
+Dentro del contexto de éste tipo de guía de ondas, se encuentran los que se conocen como modos TE$_{mn}$ (Transverse Electric Field) y TM$_{mn}$ (Transverse Magnetic Field), que se refieren a si la onda transversal a la dirección de propagación es la eléctrica o la magnética, respectivamente, $m$ es el número de medias-ondas a lo largo de la guía, y $n$ es el número de medias-ondas a lo alto de la guía. En la Figura \ref{fig:te10} se presenta un esquema de una guía de ondas cuyo modo es el TE$_{10}$.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.15]{Images/TE10.jpg}
+    \caption{Guía de ondas electromagnéticas con modo TE$_{10}$.}
+    \label{fig:te10}
+\end{figure}
+
 El modo de propagación dependerá tanto de las dimensiones de la guía, así como de la frecuencia de la onda propagada. \\ \\
 Para poder caracterizar la guía de ondas, se puede pensar en ella como una línea de transmisión, o sea, una cascada de cuadripolos (Figura 3) distribuidos a lo largo de la línea.
 \begin{center}
