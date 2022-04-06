@@ -68,18 +68,12 @@
 \hrule
 \normalsize
 \section{Resumen}
-Se midió la frecuencia de trabajo de una fuente de microondas electromagnéticas y su longitud de ondas, resultando en $f=(10.53\pm0.05)$ GHz y $\lambda_g=(3.97\pm)$ cm, respectivamente. También se caracterizó una guía de ondas para distintos planos de carga. Luego, se verificó que la señal transmitida por la guía aumenta si ésta se encuentra con la impedancia adaptada. 
+Se midió la frecuencia de emisión de una fuente de microondas electromagnéticas, y la longitud de onda para una guía de ondas rectangular WR90, resultando en $f=(10.53\pm0.05)$ GHz y $\lambda_g=(3.97\pm)$ cm, respectivamente. También se determinaron las impedancias para varios para distintos materiales ubicados en el plano de carga. Luego, se verificó que la señal transmitida por la guía es máxima si esta se encuentra con la impedancia adaptada. 
 
 \begin{multicols}{2}
 \section{Introducción}
-Una guía de ondas electromagnéticas es un dispositivo que se utiliza para restringir la energía de una onda, y que ésta sea propagada en una dirección deseada. De esta manera se puede aprovechar dicha energía de manera más eficiente. Su utilidad es evidente, por ejemplo, en la fabricación de antenas, donde se busca que la propagación sea en una dirección específica y que las pérdidas de información sean mínimas. En la Figura \ref{fig:guia} se muestra una guía de ondas electromagnéticas rectangular.
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.6]{Images/Imagen1.jpg}
-    \caption{Guía de ondas electromagnéticas rectangular.}
-    \label{fig:guia}
-\end{figure}
-Dentro del contexto de éste tipo de guía de ondas, se encuentran los que se conocen como modos TE$_{mn}$ (Transverse Electric Field) y TM$_{mn}$ (Transverse Magnetic Field), que se refieren a si la onda transversal a la dirección de propagación es la eléctrica o la magnética, respectivamente, $m$ es el número de medias-ondas a lo largo de la guía, y $n$ es el número de medias-ondas a lo alto de la guía. En la Figura \ref{fig:te10} se presenta un esquema de una guía de ondas cuyo modo es el TE$_{10}$.
+Una guía de ondas electromagnéticas es un dispositivo que se utiliza para restringir los modos de emisión de una onda, y que esta sea propagada en una dirección deseada. De esta manera se puede aprovechar dicha energía de manera más eficiente. Su utilidad es evidente, por ejemplo, en la fabricación de antenas, donde se busca que la propagación sea en una dirección específica y que las pérdidas de información sean mínimas. \\ \\
+Dentro del contexto de este tipo de guía de ondas, se encuentran los que se conocen como modos TE$_{mn}$ (Transverse Electric Field) y TM$_{mn}$ (Transverse Magnetic Field), que se refieren a si la onda transversal a la dirección de propagación es la eléctrica o la magnética, respectivamente, $m$ es el número de medias-ondas a lo largo de la guía, y $n$ es el número de medias-ondas a lo alto de la guía. En la Figura \ref{fig:te10} se presenta un esquema de una guía de ondas cuyo modo es el TE$_{10}$.
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.15]{Images/TE10.jpg}
@@ -90,51 +84,36 @@ Estos modos de propagación dependerán tanto de las dimensiones de la guía, as
 Para poder caracterizar la guía de ondas, se puede pensar en ella como una línea de transmisión, o sea, una cascada de cuadripolos (Figura \ref{fig:cuadri}) distribuidos a lo largo de la línea.
 \begin{figure}[H]
 \centering
-\begin{tikzpicture}[scale=0.75]
-\draw (1,3) to [L, l_=$L\:dz$] (-2,3);
-\draw (1,3) to [C, l_=$C$] (1,1);
-\draw[ultra thin, fill=pink,fill opacity=0.15] (-3,0.25) rectangle (2,3.8);
-\draw[->] (-2,1) -- (3,1);
-\draw[->] (-2,3) -- (3,3);
-\draw (-4,1) -- (-2,1);
-\draw (-4,3) -- (-2,3);
-\draw (-2,3) -- (-2,1);
-\node at (-7,1) { };
-\draw[->] (-5.5,3) -- node[above] {$i(z,t)$} (-4.2,3);
-\draw[->] (3.2,3) -- node[above] {$i(z+dz,t)$} (4.4,3);
-\draw[->] (-4.2, 1.2) -- node[left] {$v(z,t)$} (-4.2,2.7);
-\draw[->] (3.2, 1.2) -- node[right] {$v(z+dz,t)$} (3.2,2.7);
-\end{tikzpicture}
-\caption{Cuadripolo a disponer en cascada, que caracteriza a una línea de transmisión.}\label{fig:cuadri}
+\includegraphics[scale=0.32]{Images/linea de transm.jpeg}
+\caption{Cuadripolo a disponer en cascada, que caracterizan a una línea de transmisión.}\label{fig:cuadri}
 \end{figure}
-
-
-
-Al igual que una línea de transmisión, las guías de ondas cuentan con una impedancia característica $Z_0$. Para la guía, se puede calcular sabiendo la frecuencia $f$ a la que se propaga la onda, de la siguiente forma
+Al tratarse de una línea de transmisión, las guías de ondas cuentan con una impedancia característica $Z_0$. Para la guía, se puede calcular sabiendo la frecuencia $f$ a la que se propaga la onda, de la siguiente forma
 \begin{equation}
-    Z_0=\frac{Z_\text{vacío}}{\lambda_\text{vacío}}=Z_\text{vacío}\frac{f}{c}\lambda_g
+    Z_0=\sqrt{\frac{L}{C}}=Z_\text{vacío}\frac{f}{c}\lambda_g
 \end{equation}
-Donde $Z_\text{vacío}$ es la impedancia característica del vacío, igual a $376.6$ $\Omega$, $\lambda_\text{vacío}$ es la longitud de la onda propagada si ésta se propagase en el vacío, y $c$ es la velocidad de la luz, y $\lambda_g$ la longitud de la onda dentro de la guía.\\ \\
-Sabiendo la impedancia característica de la guía de ondas, se puede adaptar a la impedancia  $Z_\text{L}$ del plano de carga, y así poder aprovechar de manera más eficiente la energía transmitida. Éste será el caso si $Z_0$ es igual a $Z_\text{L}$. Para saber si la guía está adaptada se utiliza el \textbf{coeficiente de reflexión} $\Gamma$,
+Donde $Z_\text{vacío}$ es la impedancia característica del vacío, igual a $376.6$ $\Omega$, $\lambda_\text{vacío}$ es la longitud de la onda propagada si esta se propagase en el vacío, y $c$ es la velocidad de la luz, y $\lambda_g$ la longitud de la onda dentro de la guía.\\ \\
+Sabiendo la impedancia característica de la guía de ondas, se puede adaptar a la impedancia  $Z_\text{L}$ del plano de carga, y así poder aprovechar de manera más eficiente la energía transmitida. Este será el caso si $Z_0$ es igual a $Z_\text{L}$. Para saber si la guía está adaptada se utiliza el \textbf{coeficiente de reflexión} $\Gamma$,
 \begin{equation}\label{eq:gamma}
     \Gamma = \frac{Z_\text{L}-Z_0}{Z_\text{L}+Z_0}
 \end{equation}
 el cual vale $\Gamma = -1$ para un corto circuito, $\Gamma = 1$ para un circuito abierto, y $\Gamma = 0$ para la guía adaptada.\\ \\ 
-Otra forma de verificar si la guía está adaptada, es analizando la onda estacionaria que se forma debido a la reflexión de la onda en el plano de carga (Figura 4).
-\begin{center}
-    \includegraphics[scale=0.28]{Images/Para el informe.jpg} \\
-    \textbf{Figura 4}: Onda estacionara formada en la guía debido a la reflexión en el plano de carga. 
-\end{center}
+Para verificar que la guía está adaptada, se analiza la onda estacionaria que se forma debido a la reflexión de la onda en el plano de carga (Figura \ref{fig:onda}).  En particular, sus amplitudes máxima $V_\text{max}$ y mínima $V_\text{min}$
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{Images/onda vmax.jpg}
+    \caption{Perfil de la onda generada en la guía de ondas. El gráfico presenta voltaje en función de la posición. La línea horizontal punteada representa el valor de $V_\text{max}$ y la roja, de $V_\text{min}$. La recta horizontal continua representa la posición del plano de carga, y la punteada, la posición del mínimo más próximo al plano de carga.}
+    \label{fig:onda}
+\end{figure}
 Para ello se define el ROE (razón de onda estacionaria) como
 \begin{equation}
     \text{ROE} = \frac{1+\abs{\Gamma}}{1-\abs{\Gamma}}
 \end{equation}
-Este número también se puede calcular haciendo el cociente entre las amplitudes máxima y mínima de la onda estacionaria, y tiene un rango de 
+Este número también se puede calcular haciendo el cociente entre $V_\text{max}$ y $V_\text{min}$, y tiene un rango de 
 $$
 1<\text{ROE} < \infty
 $$
 Cuanto se quiere adaptar la guía, el ROE debe tender a 1. \\ \\
-En este laboratorio, se busca medir las propiedades de la onda estacionaria que se forma bajo distintas condiciones del plano de carga. Además, se busca adaptar la impedancia a la vez que se mide la señal transmitida. 
+En este trabajo de laboratorio, se busca medir las propiedades de la onda estacionaria que se forma bajo distintas condiciones del plano de carga. Además, se busca adaptar la impedancia a la vez que se mide la señal transmitida. 
 \subsection{Adaptación de Impedancia}
 
 Suponer que se cuenta con una una línea de transmisión semi-infinita, cuya impedancia del plano de carga normalizada es $z_L$.
@@ -143,7 +122,7 @@ De la ecuación \ref{eq:gamma} se valida que la impedancia está adaptada cuando
 Esta impedancia de carga normalizada, varía en función de la distancia $x$ al plano de carga según la siguiente expresión,
 \begin{equation*}
     z(x) = \frac{Z_L + j Z_0\tan(kx)}{Z_0 + j Z_L\tan(kx)}
-\end{equation*}\ref{eq:zx}
+\end{equation*}
 O bien su expresión equivalente
 \begin{equation*}
     z(x) = \frac{1 + \Gamma e^{-j2kx}}{1 - \Gamma e^{-j2kx}}
@@ -174,7 +153,9 @@ Los métodos para encontrar los valores de $\ell$ y $y_a$ consisten en métodos 
 
 
 \section{Método Experimental}
-
+Para este trabajo de laboratorio se utilizó una guía de ondas rectangular WR90, cuyas dimensiones son 2.3 cm de ancho y 1 cm de alto. Como fuente se utilizó un diodo Gunn, cuyo rango de emisión está entre 8 GHz y 12 GHz. Estos parámetros implican que la onda propagada por la guía sea una microonda, y que el modo de propagación corresponda al TE$_{10}$ (Figura \ref{fig:te10}). Para las mediciones, se utilizaron un total de tres multímetros marca RIGOL, modelo X. Los multímetros se encontraban conectados a una computadora, que recolectaron los datos utilizando el lenguaje Python.\\ \\
+Sobre la guía se dispuso una (antena) móvil, que se desplazaba con un (carrito) controlado por una placa de Arduino. De esta manera se pudo medir el voltaje en función de la posición, y así obtener un perfil de la onda dentro de la guía.
+\\ \\
 Primero se determina la frecuencia $f$ de emisión del diodo emisor. Luego se construye una línea de transmisión con guía de onda rectangular, conectando en cascada los siguientes elementos, como se ilustra en la Figura \ref{fig:arr1}.
 \begin{multicols}{2}
     \begin{labeling}{III} 
@@ -215,7 +196,7 @@ Se sigue el siguiente procedimiento para la adapatación de impedancia
 \begin{enumerate}
     \item Se mide la onda estacionaria con $Z_L$ en cortocircuito, referenciando el plano de carga a un mínimo de onda estacionaria.
     \item Se cambia $Z_L$ por una impedancia arbitraria y se mide la onda estacionaria. Se calculan la ROE y el desplazamiento $\delta$ del plano de carga.
-    \item Usando la ROE y el desplazamiento del plano de carga, se calcula la posición del adaptado $\ell$, la profundidad $s$ con que éste debe ser introducido a la guía, y su admitancia $y_a$. 
+    \item Usando la ROE y el desplazamiento del plano de carga, se calcula la posición del adaptado $\ell$, la profundidad $s$ con que este debe ser introducido a la guía, y su admitancia $y_a$. 
     Estos cálculos se realizan con el diagrama de Smith\footnote{Apéndice 1} y numéricamente con un script Python\footnote{Apéndice 2}.
     \item Se ajusta la posición y admitancia del adaptador, se mide la onda estacionaria validando la disminución de la ROE ante impedancia adaptada.
 \end{enumerate}
@@ -301,18 +282,24 @@ Por último, se tuvo que fijar con qué profundidad habia que insertar el adapta
 $$
 s = ?
 $$
-Se presenta en la figura x, el perfil de la onda desadaptada en contraste con el perfil de la onda adaptada,
-\\ \\
-fig 
-\\ \\
-Y, en la Figura x, se grafica el voltaje medido por la antena con la guía desadaptada, en contraste con el voltaje medido por la guía adaptada,
-\\ \\
-fig
-\\ \\
+Se muestra en la Figura \ref{fig:bocirec}, el perfil de la onda desadaptada en contraste con el perfil de la onda adaptada,
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{Images/bocina_receptor.pdf}
+    \caption{En línea azul continua, el perfil de la onda electromagnética con la guía desadaptada. En línea naranja continua, el perfil de la onda electromagnética con la guía adaptada. Sus respectivas líneas punteadas corresponden a la extensión de los datos. La línea vertical continua es el plano de carga, y la vertical punteada, el desfasaje del primer mínimo de la onda con respecto al plano.}
+    \label{fig:bocirec}
+\end{figure}
+Y, en la Figura \ref{fig:senal}, se grafica el voltaje medido por la antena con la guía desadaptada, en contraste con el voltaje medido por la guía adaptada,
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{Images/señal_transmitida.pdf}
+    \caption{En azul, la señal medida por el Rx en función del tiempo, con la guía desadaptada. En naranja, la misma con la guía adaptada.}
+    \label{fig:senal}
+\end{figure}
 \section{Discusión}
 Se ve que el ROE para el caso de la placa de cobre en el plano de carga es tres ordenes de magnitud mayor que el ROE para el caso del aire. Esto se debe a que el caso de la placa de metal, asemeja un corto circuito, por lo tanto hay mayor reflexión para el caso del aire, que asemeja un circuito abierto. \\ \\
-También se ve que, el ROE de valor más bajo fue para el caso de la corneta. Esto se debe a que, por la forma que tiene ésta, la onda se ve disipada al salir de la guía, similar a una placa acústica, y por eso la corneta es el caso mejor adaptado de los tres. \\ \\
-Se observa además, que el ROE de la onda cuando la antena receptora se encuentra a continuación del plano de carga, es mayor que el ROE de la onda cuando ésta no se encuentra colocada. Esto quiere decir, que el hecho de colocar la antena produce una reflexión de la señal, y esta se ve reflejada dentro de la guía. \\ \\
+También se ve que, el ROE de valor más bajo fue para el caso de la corneta. Esto se debe a que, por la forma que tiene esta, la onda se ve disipada al salir de la guía, similar a una placa acústica, y por eso la corneta es el caso mejor adaptado de los tres. \\ \\
+Se observa además, que el ROE de la onda cuando la antena receptora se encuentra a continuación del plano de carga, es mayor que el ROE de la onda cuando esta no se encuentra colocada. Esto quiere decir, que el hecho de colocar la antena produce una reflexión de la señal, y esta se ve reflejada dentro de la guía. \\ \\
 Se puede notar que, luego de la adaptación de la guía con la antena detectora colocada, una disminución en el ROE, indicando que la adaptación fue exitosa. Además, el voltaje medido por la antena, se ve incrementado luego de la adaptación, o sea que mayor señal está siendo transmitida, como era de esperar.
 \section{Conclusiones}
 
