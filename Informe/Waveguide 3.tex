@@ -72,67 +72,85 @@ Se midió la frecuencia de emisión de una fuente de microondas electromagnétic
 
 \begin{multicols}{2}
 \section{Introducción}
-Una guía de ondas electromagnéticas es un dispositivo que se utiliza para restringir los modos de emisión de una onda, y que esta sea propagada en una dirección deseada. De esta manera se puede aprovechar dicha energía de manera más eficiente. Su utilidad es evidente, por ejemplo, en la fabricación de antenas, donde se busca que la propagación sea en una dirección específica y que las pérdidas de información sean mínimas. \\ \\
-Dentro del contexto de este tipo de guía de ondas, se encuentran los que se conocen como modos TE$_{mn}$ (Transverse Electric Field) y TM$_{mn}$ (Transverse Magnetic Field), que se refieren a si la onda transversal a la dirección de propagación es la eléctrica o la magnética, respectivamente, $m$ es el número de medias-ondas a lo largo de la guía, y $n$ es el número de medias-ondas a lo alto de la guía. En la Figura \ref{fig:te10} se presenta un esquema de una guía de ondas cuyo modo es el TE$_{10}$.
+Una guía de ondas electromagnéticas es un dispositivo que se utiliza para restringir los modos de emisión de una onda, y que esta sea propagada en una dirección deseada. De esta manera se puede aprovechar dicha energía de manera más eficiente. Su utilidad es evidente, por ejemplo, en la fabricación de antenas, donde se busca que la propagación sea en una dirección específica y que las pérdidas de información sean mínimas. \\
+
+Las guías de onda pueden tener varias geometrías, una de las cuales es la guía de ondas rectangular caracterizada por su dimensión horizontal $a$ y su dimension vertical $b$. Esta guía puede propagar modos TE\textsubscript{mn} (Transverse Electric Field) y TM\textsubscript{mn} (Transverse Magnetic Field), que se refieren a si la onda transversal a la dirección de propagación es la eléctrica o la magnética. 
+Respectivamente, \textbf{m} es el número de medias-ondas en dirección horizontal, y \textbf{n} es el número de medias-ondas en dimensión vertical. 
+La figura \ref{fig:te10} presenta un esquema del modo TE$_{10}$ en una guía de ondas rectangular.
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.15]{Images/TE10.jpg}
     \caption{Guía de ondas electromagnéticas con modo TE$_{10}$.}
     \label{fig:te10}
 \end{figure}
-Estos modos de propagación dependerán tanto de las dimensiones de la guía, así como de la frecuencia de la onda propagada. \\ \\
-Para poder caracterizar la guía de ondas, se puede pensar en ella como una línea de transmisión, o sea, una cascada de cuadripolos (Figura \ref{fig:cuadri}) distribuidos a lo largo de la línea.
+Estos modos de propagación dependerán tanto de las dimensiones de la guía, así como de la frecuencia de la onda propagada. 
+A cada modo \textbf{mn} propagando en una guía rectangular corresponde una frecuencia de corte determinada por
+\begin{equation}
+    f_c = \frac{c}{2}\sqrt{\frac{m^2}{a^2}+\frac{n^2}{b^2}}
+\end{equation}
+Un modo \textbf{mn} propaga únicamente a frecuencias $f>f_c$.\\
+
+Para caracterizar la guía de ondas se puede estudiar una gúia de ondas propagando determinado modo como una línea de transmisión, una cascada de cuadripolos (Figura \ref{fig:cuadri}) distribuidos a lo largo de la línea.
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.32]{Images/linea de transm.jpeg}
+\includegraphics[width=0.8\linewidth]{Images/linea de transm.jpeg}
 \caption{Cuadripolo a disponer en cascada, que caracterizan a una línea de transmisión.}\label{fig:cuadri}
 \end{figure}
-Al tratarse de una línea de transmisión, las guías de ondas cuentan con una impedancia característica $Z_0$. Para la guía, se puede calcular sabiendo la frecuencia $f$ a la que se propaga la onda, de la siguiente forma
+La línea de transmisión cuenta con una impedancia característica $Z_0$, determinada por la ecuación \ref{eq:Zo}, donde la aproximación de línea de transmisión ideal equivale a considerar el conductor ideal $R\rightarrow 0$ y el dieléctrico ideal $G\rightarrow 0$.
+
+\begin{equation}\label{eq:Zo}
+    Z_0=\sqrt{\frac{R+jwL}{G+jwC}}\xrightarrow{\quad\text{Línea Ideal} \quad}\sqrt{\frac{L}{C}}
+\end{equation}
+Para una guía de onda operando en modo TE\textsubscript{mn} propagando una onda de frecuencia $f$, se cumple la relación
 \begin{equation}
-    Z_0=\sqrt{\frac{L}{C}}=Z_\text{vacío}\frac{f}{c}\lambda_g
+    Z_0=\frac{\lambda_g}{\lambda} Z_\text{vacío} = \frac{c}{f}\lambda_g Z_\text{vacío}
 \end{equation}
-Donde $Z_\text{vacío}$ es la impedancia característica del vacío, igual a $376.6$ $\Omega$, $\lambda_\text{vacío}$ es la longitud de la onda propagada si esta se propagase en el vacío, y $c$ es la velocidad de la luz, y $\lambda_g$ la longitud de la onda dentro de la guía.\\ \\
-Sabiendo la impedancia característica de la guía de ondas, se puede adaptar a la impedancia  $Z_\text{L}$ del plano de carga, y así poder aprovechar de manera más eficiente la energía transmitida. Este será el caso si $Z_0$ es igual a $Z_\text{L}$. Para saber si la guía está adaptada se utiliza el \textbf{coeficiente de reflexión} $\Gamma$,
+Donde $Z_\text{vacío} = 376.6 \, \Omega$ es la impedancia característica del vacío, $\lambda_\text{vacío}$ 
+es la longitud de la onda de frecuencia $f$ en el vacío, y $\lambda_g$ la longitud de la onda de frecuencia $f$ dentro de la guía.\\
+
+Una línea de transmisión semi-infinita consiste en una línea de transmisión terminada en una impedancia de carga $Z_L$. 
+La posición de $Z_L$ en la guía recibe el nombre de plano de carga, este genera una onda reflejada dentro de la guía según el coeficiente de reflexión $\Gamma$. 
 \begin{equation}\label{eq:gamma}
-    \Gamma = \frac{Z_\text{L}-Z_0}{Z_\text{L}+Z_0}
+    \Gamma = \frac{Z_\text{L}-Z_0}{Z_\text{L}+Z_0} 
 \end{equation}
-el cual vale $\Gamma = -1$ para un corto circuito, $\Gamma = 1$ para un circuito abierto, y $\Gamma = 0$ para la guía adaptada.\\ \\ 
-Para verificar que la guía está adaptada, se analiza la onda estacionaria que se forma debido a la reflexión de la onda en el plano de carga (Figura \ref{fig:onda}).  En particular, sus amplitudes máxima $V_\text{max}$ y mínima $V_\text{min}$
+En particular $\Gamma = -1$ si $Z_L$ es un cortocircuito, $\Gamma = 1$ si $Z_L$ un circuito abierto, y $\Gamma = 0$ si $Z_L=Z_0$. La condición $Z_L=Z_0$ se llama impedancia adaptada y es la condición de máxima transferencia de potencia.\\ 
+
+Generalmente se expresa la impedancia normalizada $z=\frac{Z}{Z_0}$. Con esta definición, la condición de impedancia adaptada se reduce a $z_L=1$.\\
+
+
+Para verificar si $Z_L$ está adaptada, se analiza la onda estacionaria que se forma debido a la reflexión de la onda en el plano de carga (Figura \ref{fig:onda}). 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\linewidth]{Images/onda vmax.jpg}
     \caption{Perfil de la onda generada en la guía de ondas. El gráfico presenta voltaje en función de la posición. La línea horizontal punteada representa el valor de $V_\text{max}$ y la roja, de $V_\text{min}$. La recta horizontal continua representa la posición del plano de carga, y la punteada, la posición del mínimo más próximo al plano de carga.}
     \label{fig:onda}
 \end{figure}
-Para ello se define el ROE (razón de onda estacionaria) como
-\begin{equation}
-    \text{ROE} = \frac{1+\abs{\Gamma}}{1-\abs{\Gamma}}
+En particular, sus amplitudes máxima $V_\text{max}$ y mínima $V_\text{min}$. 
+En función de ellas se define la ROE (razón de onda estacionaria) como
+\begin{equation}\label{eq:roe}
+    \text{ROE} = \frac{V_{max}}{V_{min}} = \frac{1+\abs{\Gamma}}{1-\abs{\Gamma}}
 \end{equation}
-Este número también se puede calcular haciendo el cociente entre $V_\text{max}$ y $V_\text{min}$, y tiene un rango de 
-$$
-1<\text{ROE} < \infty
-$$
-Cuanto se quiere adaptar la guía, el ROE debe tender a 1. \\ \\
-En este trabajo de laboratorio, se busca medir las propiedades de la onda estacionaria que se forma bajo distintas condiciones del plano de carga. Además, se busca adaptar la impedancia a la vez que se mide la señal transmitida. 
+Esta relación puede tomar valores en el rango $1<\text{ROE} < \infty$, y tiende a 1 en condición de impedancia adaptada. \\
+
+La onda estacionaria es $\frac{\lambda_g}{2}$-periódica, y tendrá mínimos 
+\begin{equation*}
+    x_k = \frac{\phi_\Gamma + 2 k\pi}{2\pi} \, \frac{\lambda_g}{2} \qquad  k\in\mathbb{Z}
+\end{equation*}
+
+Se define el desplazamiendo del plano de carga $\delta$ como la ubicación del mínimo más próximo al plano de carga.\\
+
 \subsection{Adaptación de Impedancia}
 
-Suponer que se cuenta con una una línea de transmisión semi-infinita, cuya impedancia del plano de carga normalizada es $z_L$.
-De la ecuación \ref{eq:gamma} se valida que la impedancia está adaptada cuando $Z_L = Z_0 \longrightarrow z_L = 1$.\\
-
-Esta impedancia de carga normalizada, varía en función de la distancia $x$ al plano de carga según la siguiente expresión,
-\begin{equation*}
-    z(x) = \frac{Z_L + j Z_0\tan(kx)}{Z_0 + j Z_L\tan(kx)}
-\end{equation*}
-O bien su expresión equivalente
-\begin{equation*}
+En una guía semi-infinta la impedancia en un plano varía en función de la distancia $x$ al plano de carga según la expresión,
+\begin{equation}
     z(x) = \frac{1 + \Gamma e^{-j2kx}}{1 - \Gamma e^{-j2kx}}
-\end{equation*}
+\end{equation}
 donde $k=\frac{2\pi}{\lambda_g}$ es el número de onda, y $j=\sqrt{-1}$. \\ \\
 Es equivalente trabajar con la admitancia normalizada en función de la distancia $y(x)$,
 \begin{equation*}
     y(x) = \frac{1}{z(x)} = \frac{1 - \Gamma e^{-j2kx}}{1 + \Gamma e^{-j2kx}}
 \end{equation*}
-Esta expresión permite calcular la admitancia de carga de dos guías en paralelo,
+Esta expresión permite calcular la admitancia de entrada de dos guías en paralelo,
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\linewidth]{Images/guiapll.pdf}
@@ -149,8 +167,9 @@ El método de adaptación de impedancia con stub en paralelo consiste en:
 De esta forma se genera a la entrada del paralelo un nuevo plano de carga con admitancia adaptada 
 $$y_L' = y(\ell) + y_a = 1$$
 
-Los métodos para encontrar los valores de $\ell$ y $y_a$ consisten en métodos analíticos, numéricos, o usando el diagrama de Smith.
+Los métodos para encontrar los valores de $\ell$ y $y_a$ consisten en métodos analíticos, numéricos, o usando el diagrama de Smith.\\
 
+En este trabajo de laboratorio, se busca medir las propiedades de la onda estacionaria que se forma bajo distintas condiciones del plano de carga. Además, se busca adaptar la impedancia a la vez que se mide la señal transmitida. 
 
 \section{Método Experimental}
 Para este trabajo de laboratorio se utilizó una guía de ondas rectangular WR90, cuyas dimensiones son 2.3 cm de ancho y 1 cm de alto. Como fuente se utilizó un diodo Gunn, cuyo rango de emisión está entre 8 GHz y 12 GHz. Estos parámetros implican que la onda propagada por la guía sea una microonda, y que el modo de propagación corresponda al TE$_{10}$ (Figura \ref{fig:te10}). Para las mediciones, se utilizaron un total de tres multímetros marca RIGOL, modelo X. Los multímetros se encontraban conectados a una computadora, que recolectaron los datos utilizando el lenguaje Python.\\ \\
