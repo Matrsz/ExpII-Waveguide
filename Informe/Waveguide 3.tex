@@ -179,7 +179,7 @@ Para este trabajo de laboratorio se utilizó una guía de ondas rectangular WR90
 Como fuente se utilizó un diodo Gunn, cuyo rango de emisión está entre 8 GHz y 12 GHz. 
 Estos parámetros implican que la onda propagada por la guía sea una microonda, y que el modo de propagación corresponda al TE$_{10}$ (Figura \ref{fig:te10}).\\
 
-Para medir se se utilizaron un total de tres multímetros marca RIGOL, modelo X. Los multímetros se encontraban conectados a una computadora, que recolectaron los datos utilizando el lenguaje Python.\\ \\
+Para medir se utilizaron multímetros RIGOL DM3068. Las mediciones se registran en Python. \\
 
 
 Primero se determina la frecuencia $f$ de emisión de la fuente, usando la línea de transmisión de la figura \ref{fig:arr1}.
@@ -232,7 +232,7 @@ Se sigue el siguiente procedimiento para la adapatación de impedancia
     \item Se ajusta la posición y admitancia\footnote{La admitancia se determina por la profundidad del mismo dentro de la guía, según la tabla del apendice 2} del adaptador, se mide la onda estacionaria validando la disminución de la ROE ante impedancia adaptada.
 \end{enumerate}
 
-Este método de adaptación de impedancia se utiliza para adaptar la guía cuando $Z_L$ es la impedancia del aire, y para adaptar el sistema de comunicaciones transmisor-receptor representado en la Figura \ref{fig:sistema}
+Este método de adaptación de impedancia se utiliza para adaptar la impedancia en el sistema transmisor-receptor representado en la Figura \ref{fig:sistema}
 
 \begin{figure}[H]
     \centering
@@ -250,22 +250,15 @@ El sistema se adapta con el siguiente procedimiento
     \item Se realiza el procedimiento de adaptación de impedancia en presencia del módulo Rx.
 \end{enumerate}
 
-Se registra la intensidad de señal medida por Rx ant
+Se registra la intensidad de señal medida por Rx antes y después de adaptar impedancia.
 
 \section{Resultados}
 Para la frecuencia de trabajo de la fuente, se obtuvo un valor de 
 $$
 f = (10.53 \pm 0.05) \text{ GHz}
 $$
-que es indistinguible con el valor provisto por el fabricante $f_\text{f}$, que corresponde a $f_\text{f}=10.5$ GHz. \\ \\
-La longitud de onda resultó en
-$$
-\lambda_\text{g} = (3.97 \pm ?) \text{ cm} 
-$$
-Y la impedancia característica, de la ecuación (1),
-$$
-Z_0 = (525.6 \pm ?) \text{ } \Omega
-$$
+que es indistinguible con el valor provisto por el fabricante $f_\text{f}$, que corresponde a $f_\text{f}=10.5$ GHz. \\
+
 Para la medición en cortocircuito (que se consigue colocando una placa de cobre en el plano de carga), se muestra el perfil de la onda en la Figura \ref{fig:cortocir}, 
 \begin{figure}[H]
     \centering
@@ -273,6 +266,15 @@ Para la medición en cortocircuito (que se consigue colocando una placa de cobre
     \caption{Perfil de la onda para el caso en que el plano de carga es una placa de cobre. En azul continuo se muestra la curva de los datos obtenidos, en azul punteada, la continuación analítica de la función. La línea negra vertical representa la posición del plano de carga.}
     \label{fig:cortocir}
 \end{figure}
+
+La longitud de onda resultó en
+$$
+\lambda_\text{g} = (3.97 \pm 0,02) \text{ cm} 
+$$
+Y la impedancia característica, de la ecuación (1),
+$$
+Z_0 = (526 \pm 3) \text{ } \Omega
+$$
 Se obtuvo, para este caso, un ROE de
 $$
 \text{ROE} = 455\pm?

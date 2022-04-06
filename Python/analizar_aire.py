@@ -2,12 +2,10 @@ from operator import mod
 import numpy as np
 import csv
 import matplotlib.pyplot as plt
-import uncertainties as uc
 
 from scipy.signal import find_peaks
 
 import scipy.optimize
-
 
 plt.rcParams['font.size'] = '14'
 
@@ -44,31 +42,28 @@ def fit_sin(tt, yy):
     w, p= popt
     f = w/(2.*np.pi)
     fitfunc = lambda t: A * np.sin(w*t - p) + c
-    return {"amp": A, "omega": w, "phase": p, "offset": c, "freq": f, "period": 1./f, "fitfunc": fitfunc, "cov": pcov, "maxcov": np.max(pcov), "rawres": (guess,popt,pcov)}
+    return {"amp": A, "omega": w, "phase": p, "offset": c, "freq": f, "period": 1./f, "fitfunc": fitfunc, "maxcov": np.max(pcov), "rawres": (guess,popt,pcov)}
 
 #def sort_arrays(z, v):
 #    args = z.argsort()
 #    return [z[args], v[args]]
 
 
-data2 = np.genfromtxt('cortocircuito_calib.csv', delimiter=' ')
-#data3 = np.genfromtxt('sistema_adaptado2.csv', delimiter=' ')
+data2 = np.genfromtxt('aire_epico2.csv', delimiter=' ')
+data3 = np.genfromtxt('aireadap.csv', delimiter=' ')
 #z2, v2, s2 = data2[:,0], data2[:, 1], data2[:, 3]
 x, v = data2[:,0], data2[:, 1]
-#z3, v3, s3 = data3[:,0], data3[:, 1], data3[:, 3]
+x2, v2 = data3[:,0], data3[:, 1]
 #z3, v3 = sort_arrays(data3[:,0], data3[:, 1])
 
 v = v*1000
+v2 = v2*1000
 x = x + 0.5958336695473103-0.055836036880428416-0.5706994355396638
 
-#plt.plot(z2, s2)
-#plt.plot(z3, s3)
-#plt.show()
-
 params = fit_sin(x, v)  #Fitea la curva de V(x)
+params2 = fit_sin(x2, v2)
 
 print(params)
-
 x0 = np.linspace(-1, 19, 10000)
 #z0 = z2
 
@@ -78,7 +73,7 @@ vmin = (params["offset"]-params["amp"])
 
 lg = 2/params["freq"] #Longitud de onda en la guía
 
-delta = (params["phase"]/params["omega"]) #Desviación respecto al plano de carga
+delta = params["phase"]/(2*np.pi)*lg/2 #Desviación respecto al plano de carga
 
 print(f"vmax: {vmax*1e3} \nvmin: {vmin*1e3} \nlambda: {lg} \ndelta: {delta} \ndelta/lg = {delta/lg}")
 
@@ -100,69 +95,81 @@ Zl = zl*Zo
 
 print(f"coef reflexion: {gamma} = {mod_gamma}*exp({fase_gamma}j) \nzL = {zl} = {np.abs(zl)}*exp({np.angle(zl)}j)")
 
+v_fit2 = -params2["amp"]*np.cos(params2["omega"]*x0-params2["phase"])+params2["offset"]
+
 v_fit = -params["amp"]*np.cos(params["omega"]*x0-params["phase"])+params["offset"]
+
 plt.plot(x, v)
+plt.plot(x2, v2)
 plt.plot(x0, v_fit, 'b:')
+plt.plot(x0, v_fit2, 'r:')
 plt.xlim([min(x0), max(x0)])
 #plt.plot(z3, v3)
 plt.plot([0, 0], [0, vmax], 'k', [delta, delta], [0, vmax], '--k')
-plt.plot([0, lg], [0, 0], 'r')
 plt.xlabel("x [cm]")
 plt.ylabel("V [mV]")
-plt.title("Linea en Cortocircuito")
-plt.legend(["Señal Medida", "Proyección", "Plano de Carga"], loc='lower left')
+plt.title("Antena de Bocina + Receptor")
+plt.legend(["ZL Desadaptada", "ZL Adaptada"], loc='lower left')
 plt.gca().invert_xaxis()
 plt.tight_layout()
 plt.show()
 
-zg = (Zl+1j*Zo*np.tan(2*np.pi*x0/lg))/(Zo+1j*Zl*np.tan(2*np.pi*x0/lg))
-zg = np.divide(1+gamma*np.exp(-1j*params["omega"]*x0), 1-gamma*np.exp(-1j*params["omega"]*x0))
-yg = 1./zg
+z = (Zl+1j*Zo*np.tan(2*np.pi*x0/lg))/(Zo+1j*Zl*np.tan(2*np.pi*x0/lg))
+z = np.divide(1+gamma*np.exp(-1j*params["omega"]*x0), 1-gamma*np.exp(-1j*params["omega"]*x0))
+y = 1./z
 
 
-fig, axs = plt.subplots(2,1)
+rg, xg = np.real(z), np.imag(z)
+gg, bg = np.real(y), np.imag(y)
 
-rg, xg = np.real(zg), np.imag(zg)
-gg, bg = np.real(yg), np.imag(yg)
+#indexC = np.nonzero([z if 0.99 < np.real(y) < 1.01 and np.imag(y) < 0 else 0 for z, y in zip(x0, yg)])[0][0]
+#indexL = np.nonzero([z if 0.99 < np.real(y) < 1.01 and np.imag(y) > 0 else 0 for z, y in zip(x0, yg)])[0][0]
 
-indexC = np.nonzero([z if 0.99 < np.real(y) < 1.01 and np.imag(y) < 0 else 0 for z, y in zip(x0, yg)])[0][0]
-indexL = np.nonzero([z if 0.99 < np.real(y) < 1.01 and np.imag(y) > 0 else 0 for z, y in zip(x0, yg)])[0][0]
-z_C = x0[indexC]
-y_C = np.conj(yg[indexC])
-z_L = x0[indexL]
-y_L = np.conj(yg[indexL])
+eps = 0.01
+indices = range(len(x0))
+indexC = list(filter(lambda i: 1-eps < np.real(y[i]) < 1+eps and np.imag(y[i]) < 0, indices))
 
-axs[0].plot(x0, np.real(zg), x0, np.imag(zg), 'b', x0, x0*0+1, '--k')
-axs[0].plot([0, 0], [min(xg), max(rg)], 'k')
+l = x0[indexC]
+y_a = np.conj(y[indexC])
 
-axs[1].plot(x0, np.real(yg), x0, np.imag(yg), 'b', x0, x0*0+1, '--k')
-axs[1].plot([0, 0], [min(bg), max(gg)], 'k')
+#z_L = x0[indexL]
+#y_L = np.conj(yg[indexL])
 
-for i in range(10):
-    z_adapL = z_L+i*lg/2
-    z_adapC = z_C+i*lg/2
-    axs[0].plot([z_adapL, z_adapL], [min(xg), max(rg)], ':b')
-    axs[1].plot([z_adapL, z_adapL], [min(bg), max(gg)], ':b')
-    print(f"Pos. adaptador: {z_adapL} cm = {z_adapL/lg} lg - y Adaptador: {y_L}")
-    axs[0].plot([z_adapC, z_adapC], [min(xg), max(rg)], ':r')
-    axs[1].plot([z_adapC, z_adapC], [min(bg), max(gg)], ':r')
-    print(f"Pos. adaptador: {z_adapC} cm = {z_adapC/lg} lg - y Adaptador: {y_C}")
+#axs[0].plot(x0, np.real(zg), x0, np.imag(zg), 'b', x0, x0*0+1, '--k')
+#axs[0].plot([0, 0], [min(xg), max(rg)], 'k')
+#
+#axs[1].plot(x0, np.real(yg), x0, np.imag(yg), 'b', x0, x0*0+1, '--k')
+#axs[1].plot([0, 0], [min(bg), max(gg)], 'k')
 
-axs[0].invert_xaxis()
+fig, axs = plt.subplots(2,1, sharex=True)
+
+axs[0].plot(x0, np.real(y), x0, x0*0+1, ':k')
+axs[1].plot(x0, np.imag(y), x0, x0*0, ':k')
+axs[1].set_xlim([-0.01, max(x0)])
+
+for i in indexC:
+    axs[0].plot([x0[i], x0[i]], [0, max(gg)*1.1], '--b')
+    axs[1].plot([x0[i], x0[i]], [min(bg)*1.1, max(bg)*1.1], '--b')
+
+axs[0].plot([0, 0], [-0.1, max(gg)*1.1], 'k')
+axs[1].plot([0, 0], [min(bg)*1.1, max(bg)*1.1], 'k')
+axs[0].set_ylim([-0.1, max(gg)*1.1])
+axs[1].set_ylim([min(bg)*1.1, max(bg)*1.1])
+
+axs[0].set_title("Admitancia Normalizada: y=g+jb")
+axs[0].legend(["g", "1", "ℓ"], loc='upper left')
+axs[1].legend(["b", "0", "ℓ"], loc='upper left')
+axs[1].set_xlabel("x [cm]")
 axs[1].invert_xaxis()
-
 plt.show()
 
+#for i in range(10):
+#    z_adapL = z_L+i*lg/2
+#    z_adapC = z_C+i*lg/2
+#    axs[0].plot([z_adapL, z_adapL], [min(xg), max(rg)], ':b')
+#    axs[1].plot([z_adapL, z_adapL], [min(bg), max(gg)], ':b')
+#    print(f"Pos. adaptador: {z_adapL} cm = {z_adapL/lg} lg - y Adaptador: {y_L}")
+#    axs[0].plot([z_adapC, z_adapC], [min(xg), max(rg)], ':r')
+#    axs[1].plot([z_adapC, z_adapC], [min(bg), max(gg)], ':r')
+#    print(f"Pos. adaptador: {z_adapC} cm = {z_adapC/lg} lg - y Adaptador: {y_C}")
 
-w_err = np.sqrt(np.diag(params["cov"]))[0]
-print("w err = ", np.sqrt(np.diag(params["cov"])[0]))
-
-f = uc.ufloat(params["freq"], w_err)
-lg = 2/f
-
-f = uc.ufloat(10.53e9, 0.05e9)
-
-Zo = Zv/co*f*lg
-
-
-print(lg, Zo)
