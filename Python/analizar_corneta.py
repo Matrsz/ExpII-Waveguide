@@ -5,6 +5,8 @@ import matplotlib.pyplot as plt
 
 from scipy.signal import find_peaks
 
+import uncertainties as uc
+
 import scipy.optimize
 
 plt.rcParams['font.size'] = '14'
@@ -70,6 +72,7 @@ plt.xlim([max(min(x), min(x2)), min(max(x), max(x2))])
 plt.gca().set_xticklabels([])
 plt.grid()
 plt.show()
+
 
 params = fit_sin(x, v)  #Fitea la curva de V(x)
 params2 = fit_sin(x2, v2)
@@ -184,3 +187,7 @@ plt.show()
 #    axs[1].plot([z_adapC, z_adapC], [min(bg), max(gg)], ':r')
 #    print(f"Pos. adaptador: {z_adapC} cm = {z_adapC/lg} lg - y Adaptador: {y_C}")
 
+med1 = uc.ufloat(np.mean(s), np.std(s))
+med2 = uc.ufloat(np.mean(s2), np.std(s2))
+
+print(med1, med2, med1/med2)

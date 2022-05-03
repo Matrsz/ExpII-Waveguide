@@ -3,6 +3,9 @@ import numpy as np
 import csv
 import matplotlib.pyplot as plt
 
+import uncertainties as uc
+import uncertainties.umath as um
+
 from scipy.signal import find_peaks
 
 import scipy.optimize
@@ -35,33 +38,32 @@ def fit_sin(tt, yy):
     guess_freq = 0.5 # excluding the zero frequency "peak", which is related to offset
     A = (max(yy)-min(yy))/2
     c = (max(yy)+min(yy))/2
-    guess = np.array([2.*np.pi*guess_freq, 0.1])
+    guess = np.array([2.*np.pi*guess_freq, 0., A, c])
 
-    def sinfunc(t, w, p):  return -A * np.cos(w*t - p) + c
+    def sinfunc(t, w, p, A, c):  return -A * np.cos(w*t - p) + c
     popt, pcov = scipy.optimize.curve_fit(sinfunc, tt, yy, p0=guess)
-    w, p= popt
+    w, p, A, c= popt
     f = w/(2.*np.pi)
     fitfunc = lambda t: A * np.sin(w*t - p) + c
-    return {"amp": A, "omega": w, "phase": p, "offset": c, "freq": f, "period": 1./f, "fitfunc": fitfunc, "maxcov": np.max(pcov), "rawres": (guess,popt,pcov)}
+    return {"amp": A, "omega": w, "phase": p, "offset": c, "freq": f, "period": 1./f, "fitfunc": fitfunc, "cov": pcov, "maxcov": np.max(pcov), "rawres": (guess,popt,pcov)}
 
 #def sort_arrays(z, v):
 #    args = z.argsort()
 #    return [z[args], v[args]]
 
 
-data2 = np.genfromtxt('aire_epico2.csv', delimiter=' ')
-data3 = np.genfromtxt('aireadap.csv', delimiter=' ')
+data2 = np.genfromtxt('sistema_desadaptado2.csv', delimiter=' ')
+#data3 = np.genfromtxt('sistema_adaptado2.csv', delimiter=' ')
 #z2, v2, s2 = data2[:,0], data2[:, 1], data2[:, 3]
-x, v = data2[:,0], data2[:, 1]
-x2, v2 = data3[:,0], data3[:, 1]
+x, v, s = data2[:,0], data2[:, 1], data2[:, 3]
+#x2, v2, s2 = data3[:,0], data3[:, 1], data3[:, 3]
 #z3, v3 = sort_arrays(data3[:,0], data3[:, 1])
 
 v = v*1000
-v2 = v2*1000
 x = x + 0.5958336695473103-0.055836036880428416-0.5706994355396638
 
+
 params = fit_sin(x, v)  #Fitea la curva de V(x)
-params2 = fit_sin(x2, v2)
 
 print(params)
 x0 = np.linspace(-1, 19, 10000)
@@ -93,23 +95,20 @@ gamma = mod_gamma * np.exp(1j*fase_gamma)  #Coeficiente de reflexión
 zl = (1+gamma)/(1-gamma)
 Zl = zl*Zo
 
-print(f"coef reflexion: {gamma} = {mod_gamma}*exp({fase_gamma}j) \nzL = {zl} = {np.abs(zl)}*exp({np.angle(zl)}j)")
+print(f"coef reflexion: {gamma} = {mod_gamma}*exp({fase_gamma}j) \nzL = {zl} = {np.abs(zl)}*exp({np.angle(zl)}j)\nyL = {1/zl} = {np.abs(1/zl)}*exp({np.angle(1/zl)}j)")
 
-v_fit2 = -params2["amp"]*np.cos(params2["omega"]*x0-params2["phase"])+params2["offset"]
 
 v_fit = -params["amp"]*np.cos(params["omega"]*x0-params["phase"])+params["offset"]
 
 plt.plot(x, v)
-plt.plot(x2, v2)
 plt.plot(x0, v_fit, 'b:')
-plt.plot(x0, v_fit2, 'r:')
 plt.xlim([min(x0), max(x0)])
 #plt.plot(z3, v3)
 plt.plot([0, 0], [0, vmax], 'k', [delta, delta], [0, vmax], '--k')
 plt.xlabel("x [cm]")
 plt.ylabel("V [mV]")
-plt.title("Antena de Bocina + Receptor")
-plt.legend(["ZL Desadaptada", "ZL Adaptada"], loc='lower left')
+plt.title("Antena de Bocina")
+plt.legend(["Señal Medida", "Proyección"], loc='lower left')
 plt.gca().invert_xaxis()
 plt.tight_layout()
 plt.show()
@@ -148,6 +147,7 @@ axs[1].plot(x0, np.imag(y), x0, x0*0, ':k')
 axs[1].set_xlim([-0.01, max(x0)])
 
 for i in indexC:
+    print(f"ell = {x0[i]} \ny_a = {y[i]}")
     axs[0].plot([x0[i], x0[i]], [0, max(gg)*1.1], '--b')
     axs[1].plot([x0[i], x0[i]], [min(bg)*1.1, max(bg)*1.1], '--b')
 
@@ -163,6 +163,7 @@ axs[1].set_xlabel("x [cm]")
 axs[1].invert_xaxis()
 plt.show()
 
+
 #for i in range(10):
 #    z_adapL = z_L+i*lg/2
 #    z_adapC = z_C+i*lg/2
@@ -173,3 +174,46 @@ plt.show()
 #    axs[1].plot([z_adapC, z_adapC], [min(bg), max(gg)], ':r')
 #    print(f"Pos. adaptador: {z_adapC} cm = {z_adapC/lg} lg - y Adaptador: {y_C}")
 
+
+w_err, p_err, A_err, c_err = np.sqrt(np.diag(params["cov"]))
+print("w err = ", np.sqrt(np.diag(params["cov"])[0]))
+
+f = uc.ufloat(params["freq"], w_err)
+lg = 2/f
+f = uc.ufloat(10.53e9, 0.05e9)
+
+A = uc.ufloat(params["amp"], A_err*2)
+c = uc.ufloat(params["offset"], c_err)
+p = uc.ufloat(params["phase"], p_err)
+
+vmax = c+A
+vmin = c-A
+
+Zo = Zv/co*f*lg
+
+roe = vmax/vmin
+
+delta = p/(2*np.pi)*lg/2
+
+
+mod_gamma = (roe - 1)/(roe + 1)
+fase_gamma = -p+np.pi
+print(mod_gamma, fase_gamma)
+re_gamma = mod_gamma*um.cos(fase_gamma) 
+im_gamma = mod_gamma*um.sin(fase_gamma)
+
+a = 1+re_gamma
+b = im_gamma
+c = 1-re_gamma
+d = -im_gamma
+
+Zo = uc.ufloat(562, 3)
+rl = (a*c+b*d)/(c**2+d**2)*Zo
+xl = (b*c-a*d)/(c**2+d**2)*Zo  #Coeficiente de reflexión
+
+
+#zl = (1+gamma)/(1-gamma)
+#Zl = zl*Zo
+
+
+print(f"lambda = {lg} \nZo = {Zo} \nROE = {roe} \ndelta = {delta/lg} lg, \nRL = {rl}\nXL= {xl}")

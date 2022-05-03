@@ -37,11 +37,11 @@ def fit_sin(tt, yy):
     guess_freq = 0.5 # excluding the zero frequency "peak", which is related to offset
     A = (max(yy)-min(yy))/2
     c = (max(yy)+min(yy))/2
-    guess = np.array([2.*np.pi*guess_freq, 0.1])
+    guess = np.array([2.*np.pi*guess_freq, 0.1, A, c])
 
-    def sinfunc(t, w, p):  return -A * np.cos(w*t - p) + c
+    def sinfunc(t, w, p, A, c):  return -A * np.cos(w*t - p) + c
     popt, pcov = scipy.optimize.curve_fit(sinfunc, tt, yy, p0=guess)
-    w, p= popt
+    w, p, A, c= popt
     f = w/(2.*np.pi)
     fitfunc = lambda t: A * np.sin(w*t - p) + c
     return {"amp": A, "omega": w, "phase": p, "offset": c, "freq": f, "period": 1./f, "fitfunc": fitfunc, "cov": pcov, "maxcov": np.max(pcov), "rawres": (guess,popt,pcov)}
@@ -161,6 +161,7 @@ f = uc.ufloat(params["freq"], w_err)
 lg = 2/f
 
 f = uc.ufloat(10.53e9, 0.05e9)
+
 
 Zo = Zv/co*f*lg
 
